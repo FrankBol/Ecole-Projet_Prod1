@@ -6,7 +6,7 @@ Describe project here in a few lines.
 
 Paragraphe.
 
-### Sub-titre
+### Sub-title
 
 Phrase.
 
