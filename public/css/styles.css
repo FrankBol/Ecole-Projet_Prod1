@@ -1,0 +1,44 @@
+body{
+    text-align: center;
+    background-color: rgba(47, 81, 182, 0.137);
+    background-image: url(image/skiRando.jpg);
+  }
+  label{
+    display: inline-block;
+    padding: 10px 
+  }
+  h1{
+    margin: 50px;
+  }
+  .formulaire{
+      display: inline-block;
+      margin: 0 auto;
+      background-color: rgb(176, 208, 245);
+      width: 400px;
+
+    }
+  .champ{
+    text-align: left;
+    display: block;
+  }
+  fieldset{
+    text-align: center;
+    padding: 50px;
+  }
+  div > label{
+    width: 150px;
+  }
+  button{
+    background-color: rgb(239, 243, 26);
+    border-radius: 10px;
+    width:100px ;
+    height: 30px;
+    margin: 50px;
+
+  } 
+  .profil{
+      width: 400px;
+      height: 200px;
+      margin: 0 auto;
+      background-color:rgba(47, 81, 182, 0.137); ;
+  }  
