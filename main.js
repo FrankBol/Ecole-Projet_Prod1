@@ -22,7 +22,7 @@ app.set("view engine","ejs");
 app.use(express.static(pathPublic, {extensions: ['html','htm','css','js','jpg','gif','png']}));
 
 app.get('/signup', (request, response) => {
-    response.render('signup ');
+    response.render('signup');
 });
 app.get('/login', (request, response) => {
     response.render('login');
