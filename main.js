@@ -4,8 +4,6 @@ const express = require("express");
 // Variables Environment
 const pathPublic = "public";
 const PORT = 3000;
-// APIs
-const SkiApi = "https://ski-api.herokuapp.com";
 
 // Application Express
 let app = new express();
@@ -18,56 +16,21 @@ app.listen(PORT, () => {
 // Le moteur des views est EJS.
 app.set("view engine","ejs");
 
-// Chemin "/public" pour le contenu static dont HTML, CSS, JS, JPG, GIF, PNG.
-app.use(express.static(pathPublic, {extensions: ['html','htm','css','js','jpg','gif','png']}));
+// Chemin "/public" 
+app.use(express.static("public"));
 
-app.get('/signup', (request, response) => {
-    response.render('signup');
-});
-app.get('/login', (request, response) => {
-    response.render('login');
-});
-app.get('/profil', (request, response) => {
-    response.render('profil');
-});
-app.get('/', (request, response) => {
-    response.sendFile('index.html');
-});
+const controllers = require("./controllers/controllerRoute");
+
+app.get('/signup', controllers.signup);
+app.get('/login', controllers.login);
+app.get('/profil', controllers.profil);
+app.get('/', controllers.index);
 
 // status de l'API
-app.get("/API/status", (request, response) => {
-    axios.get(SkiApi+"/status")
-    .then(resultat => {
-        response.send(resultat.data);
-    })
-    .catch(erreur => {
-        response.send('erreur :' + erreur);
-    });
-});
+app.get("/API/status", controllers.apiStatus);
 
 // exemple de login de l'API
-app.get("/API/login", (request, response) => {
-    axios.get(SkiApi+"/login")
-    .then(resultat => {
-        response.send(resultat.data);
-    })
-    .catch(erreur => {
-        response.send('erreur :' + erreur);
-    });
-});
+app.get("/API/login", controllers.apiLogin);
 
 // login de l'API
-app.post("/API/login", (request, response) => {
-    axios.post(SkiApi+"/login", 
-        {
-            "email": "rr",
-            "password": "rr"
-        }
-    )
-    .then(resultat => {
-        response.send(resultat.data);
-    })
-    .catch(erreur => {
-        response.send('erreur :' + erreur);
-    });
-});
+app.post("/API/login", controllers.apiLoginPost);
