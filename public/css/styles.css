@@ -12,16 +12,19 @@ label {
 
 h1 {
   margin: 50px;
+  font-size: 5em;
 }
 
-.formulaire {
+form{
   display: inline-block;
   margin: 0 auto;
-  background-color: rgb(176, 208, 245);
+ 
   width: 400px;
 
 }
-
+fieldset{
+  background-color: rgb(176, 208, 245);
+}
 .champ {
   text-align: left;
   display: block;
@@ -50,6 +53,7 @@ button {
   height: 400px;
   margin: 0 auto;
   background-color: white;
+  background-color: rgb(176, 208, 245);
 }
 .button{
   width: 200px;
@@ -65,4 +69,15 @@ button {
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+}
+.profilInfo{
+  display: inline-block;
+  width: 30%;
+  margin-top: 70px;
+  font-size: 1.5em;
+}
+.profilLeft{
+  text-align: left;
+  margin: auto;
+  width: 80%;
 }
