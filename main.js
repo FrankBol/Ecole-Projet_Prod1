@@ -17,7 +17,7 @@ app.set("view engine","ejs");
 
 // Les paramètres seront dans request au lieu de la methode POST
 app.use(express.urlencoded({extended : false}));
-
+  
 // Chemin "/public" 
 app.use(express.static("public"));
 
