@@ -23,8 +23,8 @@ app.use(express.static("public"));
 
 const controllers = require("./controllers/controllerRoute");
 
-app.get('/signup', controllers.postSignup);
-app.get('/login', controllers.postLogin);
+app.get('/signup', controllers.getSignup);
+app.get('/login', controllers.getLogin);
 app.get('/profil', controllers.profil);
 app.get('/', controllers.index);
 
@@ -34,9 +34,9 @@ app.post("/signup", controllers.postSignup);
 app.post("/login", controllers.postLogin);
 
 // status de l'API
-app.get("/API/status", controllers.getStatus);
+app.get("/API/status", controllers.getStatusAPI);
 
 // exemple de login de l'API
-app.get("/API/login", controllers.getLogin);
+app.get("/API/login", controllers.getLoginAPI);
 
 

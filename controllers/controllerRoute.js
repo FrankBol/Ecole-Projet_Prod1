@@ -3,11 +3,11 @@ const axios = require("axios");
 
 const SkiApi = "https://ski-api.herokuapp.com";
 
-exports.signup = (request, response) => {
+exports.getSignup = (request, response) => {
     response.render('signup');
 };
 
-exports.login = (request, response) => {
+exports.getLogin = (request, response) => {
     response.render('login');
 };
 
@@ -58,7 +58,7 @@ exports.postSignup = (request, response) => {
     // {"_id":"6221692368a0c30004062a7f","address":"","phone":"","name":"Amy Bienvenu","email":"amy.bienvenu@outlook.com","password":"$2a$08$cOz0xeNg033rpkn7UweM2e4kcLhuI/BMkmLRoVT/PRNIKU6D18L0e","__v":0}    
 };
 
-exports.getStatus = (request, response) => {
+exports.getStatusAPI = (request, response) => {
     axios.get(SkiApi+"/status")
     .then(resultat => {
         response.send(resultat.data);
@@ -68,7 +68,7 @@ exports.getStatus = (request, response) => {
     });
 };
 
-exports.getLogin = (request, response) => {
+exports.getLoginAPI = (request, response) => {
     axios.get(SkiApi+"/login")
     .then(resultat => {
         response.send(resultat.data);
