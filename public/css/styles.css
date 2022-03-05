@@ -1,4 +1,4 @@
-body {
+.body {
   text-align: center;
   background-image: url(../image/skiRando.jpg);
   background-size: cover ;
@@ -39,6 +39,9 @@ fieldset {
 div>label {
   width: 150px;
 }
+div>button {
+  margin: 40px;
+}
 
 .profil {
   width: 400px;
@@ -49,7 +52,6 @@ div>label {
 }
 .button{
   width: 175px;
-  /* height: 8px; */
   background-color: rgba(102, 102, 95, 0.25);
   display: inline-block;
   border-radius: 10px;
