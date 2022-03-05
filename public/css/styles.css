@@ -49,8 +49,8 @@ div>label {
 }
 .button{
   width: 175px;
-  height: 8px;
-  background-color: rgba(250, 249, 209, 0.25);
+  /* height: 8px; */
+  background-color: rgba(102, 102, 95, 0.25);
   display: inline-block;
   border-radius: 10px;
   border: none;
