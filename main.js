@@ -1,5 +1,4 @@
-// Modules
-const axios = require("axios");
+
 const express = require("express");
 // Variables Environment
 const pathPublic = "public";

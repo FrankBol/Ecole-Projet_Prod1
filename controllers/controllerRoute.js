@@ -1,3 +1,6 @@
+// Modules
+const axios = require("axios");
+
 const SkiApi = "https://ski-api.herokuapp.com";
 
 exports.signup = (request, response) => {
