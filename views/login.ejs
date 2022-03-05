@@ -9,23 +9,22 @@
 </head>
 <body>
     <h1>SKI API</h1>
-    <form action="login" method="post">
-        <div class="formulaire">
+    <form action="login" method="post">       
         <fieldset>
             <legend>Connexion à votre compte</legend>
             <div class="champs">
                 <label for="email">Email :</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" required>
             </div>
             <div class="champs">
                 <label for="password">Mot de passe :</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
             </div>
             <div class="champs">
-                <button type="submit">Profil</button>
-            </div>
-        </div>
-        </form>
-        </fieldset>
+                <button type="submit">Connexion</button>
+            </div> 
+            <div><a href="signup">Pas encore de compte <br>Créé votre compte</a></div> 
+        </fieldset>      
+    </form>       
 </body>
 </html>

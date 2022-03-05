@@ -34,10 +34,10 @@ app.post("/signup", controllers.postSignup);
 
 app.post("/login", controllers.postLogin);
 
-
 // status de l'API
 app.get("/API/status", controllers.getStatus);
 
 // exemple de login de l'API
 app.get("/API/login", controllers.getLogin);
+
 

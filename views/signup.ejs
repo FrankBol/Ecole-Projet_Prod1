@@ -10,24 +10,24 @@
 <body>
     <h1>SKI API</h1>
     <form action="signup" method="post">
-        <div class="formulaire">
         <fieldset>
             <legend>Création de votre compte</legend>
             <div>
                 <label for="email">Email :</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" required>
             </div>
             <div>
                 <label for="password">Mot de passe :</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
             </div>
             <div>
-                <label for="nom">Nom : </label>
-                <input type="nom" name="nom" id="nom">
+                <label for="name">Nom : </label>
+                <input type="text" name="name" id="name" required>
             </div>
             <div>
-                <button type="submit">Connexion</button>
+                <button type="submit">Soumettre</button>
             </div>
+            <div><a href="login">Déjà Membre?<br>Connexion</a></div>
         </form>
         </fieldset>
 </body>
