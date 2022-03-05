@@ -16,21 +16,28 @@ app.listen(PORT, () => {
 // Le moteur des views est EJS.
 app.set("view engine","ejs");
 
+// Les paramètres seront dans request au lieu de la methode POST
+app.use(express.urlencoded({extended : false}));
+
 // Chemin "/public" 
 app.use(express.static("public"));
 
 const controllers = require("./controllers/controllerRoute");
 
-app.get('/signup', controllers.signup);
-app.get('/login', controllers.login);
+app.get('/signup', controllers.postSignup);
+app.get('/login', controllers.postLogin);
 app.get('/profil', controllers.profil);
 app.get('/', controllers.index);
 
+
+app.post("/signup", controllers.postSignup);
+
+app.post("/login", controllers.postLogin);
+
+
 // status de l'API
-app.get("/API/status", controllers.apiStatus);
+app.get("/API/status", controllers.getStatus);
 
 // exemple de login de l'API
-app.get("/API/login", controllers.apiLogin);
+app.get("/API/login", controllers.getLogin);
 
-// login de l'API
-app.post("/API/login", controllers.apiLoginPost);
