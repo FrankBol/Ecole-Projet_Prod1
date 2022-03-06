@@ -1,4 +1,4 @@
-body {
+.body {
   text-align: center;
   background-image: url(../image/skiRando.jpg);
   background-size: cover ;
@@ -39,6 +39,9 @@ fieldset {
 div>label {
   width: 150px;
 }
+div>button {
+  margin: 40px;
+}
 
 .profil {
   width: 400px;
@@ -49,13 +52,12 @@ div>label {
 }
 .button{
   width: 175px;
-  height: 8px;
-  background-color: rgba(250, 249, 209, 0.25);
+  background-color: rgba(255, 94, 0, 0.7);
   display: inline-block;
-  border-radius: 10px;
-  border: none;
-  color: #0571ff;
+  border-radius: 15px 0px 30px 5px ;
+  color: #ffffff;
   text-align: center;
+  font-weight: bolder;
   font-size: 15px;
   padding: 20px;
   transition: all 0.5s;
@@ -85,7 +87,7 @@ nav ul li{
 }
 nav a{
   text-decoration: none;
-  color: rgb(2, 148, 245);;
+  color: rgb(250, 250, 250);;
   transition: all 0.5s;
   padding: 15px;
 }
