@@ -43,10 +43,11 @@ exports.postSignup = (request, response) => {
     let email = request.body.email;
     let password = request.body.password;
     let name = request.body.name;
-    axios.post(SkiApi+"/login", 
+    axios.post(SkiApi+"/signup", 
         {
             "email": email,
-            "password": password
+            "password": password,
+            "name" : name
         }
     )
     .then(resultat => {
