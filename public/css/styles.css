@@ -23,9 +23,6 @@ form{
   width: 400px;
 
 }
-fieldset{
-  background-color: rgb(176, 208, 245);
-}
 .champ {
   text-align: left;
   display: block;
@@ -34,6 +31,7 @@ fieldset{
 fieldset {
   text-align: center;
   padding: 50px;
+  background-color: rgb(176, 208, 245);
 }
 
 div>label {
