@@ -16,7 +16,7 @@ exports.profil = (request, response) => {
 };
 
 exports.index = (request, response) => {
-    response.sendFile('index.html');
+    response.render('index');
 };
 
 
