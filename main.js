@@ -25,7 +25,7 @@ const controllers = require("./controllers/controllerRoute");
 
 app.get('/signup', controllers.getSignup);
 app.get('/login', controllers.getLogin);
-app.get('/profil', controllers.profil);
+app.get('/profil', controllers.getLogin);
 app.get('/', controllers.index);
 
 
