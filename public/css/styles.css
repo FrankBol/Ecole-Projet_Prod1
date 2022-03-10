@@ -83,8 +83,8 @@ div>button {
   width: 400px;
   height: 400px;
   margin: 0 auto;
-  background-color: white;
-  background-color: rgb(176, 208, 245);
+  background-color: rgba(255, 94, 0, 0.7);
+  border-radius: 15px 0px 30px 5px ;
 }
 .button{
   width: 175px;
@@ -135,6 +135,7 @@ div>button {
   width: 30%;
   margin-top: 70px;
   font-size: 1.5em;
+  color: white;
 }
 .profilLeft{
   text-align: left;
