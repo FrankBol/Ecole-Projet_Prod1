@@ -15,6 +15,7 @@ An example
 ## Authors
 
 * **Amy Bienvenu** - [amypurple](https://github.com/amypurple)
+* **Maksym Bondarenko** - [bmaksym](https://github.com/bmaksym)
 * **Francis Bolduc** - [FrankBol](https://github.com/FrankBol)
 * **Nathalie Nicolas** - [Nathalie-newdev](https://github.com/Nathalie-newdev)
 * **Christopher Petryk** - [ChristWeb](https://github.com/christWeb)
