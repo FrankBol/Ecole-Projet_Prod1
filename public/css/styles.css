@@ -50,7 +50,6 @@ h1 {
 form{
   display: inline-block;
   margin: 0 auto;
- 
   width: 400px;
 
 }
@@ -62,14 +61,22 @@ form{
 fieldset {
   text-align: center;
   padding: 50px;
-  background-color: rgb(176, 208, 245);
+  background-color: rgba(255, 94, 0, 0.7);
+  border-radius: 15px 0px 30px 5px ;
+}
+.h3-class {
+  color: white;
 }
 
 div>label {
+  color: white;
   width: 150px;
 }
 div>button {
   margin: 40px;
+}
+.btn-style{
+  color: white;
 }
 
 .profil {
