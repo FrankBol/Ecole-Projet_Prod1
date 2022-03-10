@@ -19,6 +19,7 @@ An example
 * **Francis Bolduc** - [FrankBol](https://github.com/FrankBol)
 * **Nathalie Nicolas** - [Nathalie-newdev](https://github.com/Nathalie-newdev)
 * **Christopher Petryk** - [ChristWeb](https://github.com/christWeb)
+
 ## License
 
 ## Acknowledgments
