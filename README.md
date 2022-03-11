@@ -4,9 +4,11 @@ Describe project here in a few lines.
 
 ## SKI WAVES
 
-Paragraphe.
+Ce projet utilise un serveur NodeJS Express, avec modules EJS et Axios.
+NPM START pour démarrer le serveur
+Prérequis : npm et nodemon déjà installé.
 
-### Plateforme permettant de créer une communauté de skieurs aux meilleurs endroits 
+## Plateforme permettant de créer une communauté de skieurs aux meilleurs endroits 
 
 ```Le projet SKI WAVES permet de créer une plateforme qui met en contact des skieurs qui peuvent échanger les meilleurs endroits pour effectuer du ski de randonnée. Un fils d'actualité des emplacements découverts et le partage de ces informations donnent la possibilité de créer un réseau social de skieurs.
 An example
