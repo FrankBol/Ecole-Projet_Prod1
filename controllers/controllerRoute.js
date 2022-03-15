@@ -7,12 +7,14 @@ exports.getSignup = (request, response) => {
     response.render('signup');
 };
 
+// TODO : vérifier pour error = undefined
 exports.getLogin = (request, response) => {
-    response.render('login');
+    response.render('login',{error:undefined});
 };
 
-exports.profil = (request, response) => {
-    response.render('profil');
+// TODO : vérifier pour name et email = undefined
+exports.getProfil = (request, response) => {
+    response.render('profil',{name:undefined, email:undefined});
 };
 
 exports.index = (request, response) => {
@@ -34,7 +36,8 @@ exports.postLogin = (request, response) => {
         // response.send(resultat.data);
     })
     .catch(erreur => {
-        response.send('erreur :' + erreur);
+        response.render('login', {error:"Erreur de login"});
+        // response.send('erreur :' + erreur);
     });
     // {"address":"","phone":"","_id":"6221692368a0c30004062a7f","name":"Amy Bienvenu","email":"amy.bienvenu@outlook.com","password":"$2a$08$cOz0xeNg033rpkn7UweM2e4kcLhuI/BMkmLRoVT/PRNIKU6D18L0e","__v":0,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI2MjIxNjkyMzY4YTBjMzAwMDQwNjJhN2YiLCJleHAiOjE2NDY0NDMyMzc2MDZ9.uolOMqUnwtVXrykLvDcHw8_UEU5VECQ8tr1b_XFiAhA"}    
 };

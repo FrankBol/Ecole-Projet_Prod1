@@ -1,31 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Connexion</title>
-</head>
-
-<body class="body">
-    <h1 class="page-header">SKI WAVES</h1>
-    <form action="login" method="post">       
-        <fieldset>
-            <h3 class="h3-class">Connexion à votre compte</h3>
-            <div class="champs">
-                <label for="email">Email :</label>
-                <input type="email" name="email" id="email" required>
-            </div>
-            <div class="champs">
-                <label for="password">Mot de passe :</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            <div class="champs">
-                <button type="submit">Connexion</button>
-            </div> 
-            <div><a class="btn-style" href="signup">Pas encore de compte <br>Créé votre compte</a></div> 
-        </fieldset>      
-    </form>       
-</body>
-</html>
+<h1 class="page-header">SKI WAVES</h1>
+<form action="login" method="post">
+    <fieldset>
+        <h3 class="h3-class">Connexion à votre compte</h3>
+        <% if (!!error) { %>
+        <!-- TODO : Message d'erreur de login -->
+        <i><%= error %></i>
+        <% } %>
+        <div class="champs">
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div class="champs">
+            <label for="password">Mot de passe :</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div class="champs">
+            <button type="submit">Connexion</button>
+        </div>
+        <div><a class="btn-style" href="signup">Pas encore de compte <br>Créé votre compte</a></div>
+    </fieldset>
+</form>
