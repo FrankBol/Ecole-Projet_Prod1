@@ -1,12 +1,19 @@
-    <h1 class="page-header">SKI WAVES</h1>
-    <div class="profil">
-        <h2 class="h3-class">VOTRE PROFIL</h2>
-        <div class="profilLeft">
-            <% if (name!=undefined) { %>
-            <div><span class="profilInfo"> Nom : </span><%= name %></div>
-            <% } %>
-            <% if (email!=undefined) { %>
-            <div><span class="profilInfo">Email :</span><%= email %></div>
-            <% } %>
-        </div>
+<script  src="js/profil.js" defer></script>
+
+<h1 class="page-header">SKI WAVES</h1>
+<div class="profil">
+    <h2 class="h3-class">VOTRE PROFIL</h2>
+    <div class="profilLeft">
+        <!-- <% if (name!=undefined) { %>
+        <% window.localStorage.setItem("ACCESS_TOKEN", data.token) %>
+        <div><span class="profilInfo"> Nom : </span><%= name %></div>
+        <% } %>
+        <% if (email!=undefined) { %>
+        <div><span class="profilInfo">Email :</span><%= email %></div>
+        <% } %> -->
+        <div><span class="profilInfo"> Nom : </span ><span class="profilInfo" id="name"></span></div>
+        <div><span class="profilInfo">Email :</span ><span class="profilInfo" id="email"></span></div>       
     </div>
+    <button id="deconnexion">Déconnexion</button>
+    </div>
+</div>

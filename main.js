@@ -42,14 +42,10 @@ app.get('/profil', controllers.getProfil);
 app.get('/', controllers.index);
 
 
-app.post("/signup", controllers.postSignup);
+app.post("/signupSubmit", controllers.postSignup);
 
-app.post("/login", controllers.postLogin);
+//app.post("/login", controllers.postLogin);
 
-// status de l'API
-app.get("/API/status", controllers.getStatusAPI);
 
-// exemple de login de l'API
-app.get("/API/login", controllers.getLoginAPI);
 
 
