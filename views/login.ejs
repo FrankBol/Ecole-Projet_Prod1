@@ -1,11 +1,11 @@
+<script src="/js/login.js" defer></script>
+
 <h1 class="page-header">SKI WAVES</h1>
-<form action="login" method="post">
-    <fieldset>
-        <h3 class="h3-class">Connexion à votre compte</h3>
-        <% if (!!error) { %>
-        <!-- TODO : Message d'erreur de login -->
-        <i><%= error %></i>
-        <% } %>
+<!-- <form action="login" method="post">
+    <fieldset> -->
+        <div class="a">
+            <div class="b">
+                <h3 class="h3-class">Connexion à votre compte</h3>
         <div class="champs">
             <label for="email">Email :</label>
             <input type="email" name="email" id="email" required>
@@ -15,8 +15,11 @@
             <input type="password" name="password" id="password" required>
         </div>
         <div class="champs">
-            <button type="submit">Connexion</button>
+            <button onclick="login()">Se connecter</button> 
+            <!-- <button type="submit">Connexion</button> -->
         </div>
         <div><a class="btn-style" href="signup">Pas encore de compte <br>Créé votre compte</a></div>
-    </fieldset>
-</form>
+            </div>
+        </div>
+    <!-- </fieldset>
+</form> -->
