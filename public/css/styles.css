@@ -3,6 +3,15 @@
   background-image: url(../image/skiRando.jpg);
   background-size: cover ;
 }
+img{
+  width: 5em;
+  border-radius: 15px;
+}
+.image{
+  position : fixed;
+  left : 10px;
+  top : 10px;
+}
 
 label {
   display: inline-block;
@@ -47,7 +56,7 @@ h1 {
   100%   { opacity: 1; }
 }
 
-form, .a{
+.form, form {
   display: inline-block;
   margin: 0 auto;
   width: 400px;
@@ -58,7 +67,7 @@ form, .a{
   display: block;
 }
 
-fieldset, .b{
+.cadre, fieldset {
   text-align: center;
   padding: 50px;
   background-color: rgba(255, 94, 0, 0.7);
@@ -132,16 +141,18 @@ div>button {
 }
 .profilInfo{
   display: inline-block;
-  width: 30%;
+  width: 25%;
   margin-top: 70px;
   font-size: 1.5em;
   color: white;
 }
+
 .profilLeft{
   text-align: left;
-  margin: auto;
+  margin: 20px;
   width: 80%;
 }
+
 nav ul{
   list-style-type: none;
   padding-left: 0;
