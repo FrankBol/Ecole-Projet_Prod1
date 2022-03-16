@@ -18,16 +18,16 @@ deconnexion.addEventListener("click", () => {
     window.location.replace("/login");
 });
 
-let token = window.localStorage.ACCESS_TOKEN;
+// let token = window.localStorage.ACCESS_TOKEN;
 
-const body = JSON.stringify({ email: emailValue});
+// const body = JSON.stringify({ email: emailValue});
 
-const response =  fetch("https://ski-api.herokuapp.com/login", {       
-    method: "GET",
-    body,
-     headers : { 
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
+// const response =  fetch("https://ski-api.herokuapp.com/login", {       
+//     method: "GET",
+//     body,
+//      headers : { 
+//       'Content-Type': 'application/json',
+//       'Accept': 'application/json'
+//     }
     
-  });
+//   });
