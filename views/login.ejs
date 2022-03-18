@@ -1,13 +1,11 @@
-<script src="/js/login.js" defer></script>
+<!-- <script src="/js/login.js" defer></script> -->
 
 <div class="image">
 <img src="/image/logo.jpg" alt="logo">
 </div>
 <h1 class="page-header">SKI WAVES</h1>
-<!-- <form action="login" method="post">
-    <fieldset> -->
-        <div class="form">
-            <div class="cadre">
+<form action="/postlogin" method="post">
+    <fieldset>
                 <h3 class="h3-class">Connexion à votre compte</h3>
         <div class="champs">
             <label for="email">Email :</label>
@@ -17,12 +15,13 @@
             <label for="password">Mot de passe :</label>
             <input type="password" name="password" id="password" required>
         </div>
+        <span>
+           <% if (!!loginFaile) {%> <%= loginFaile %> <%}%> 
+        </span>
         <div class="champs">
-            <button onclick="login()">Se connecter</button> 
-            <!-- <button type="submit">Connexion</button> -->
+            <!-- <button onclick="login()">Se connecter</button>  -->
+            <button type="submit">Connexion</button>
         </div>
-        <div><a class="btn-style" href="signup">Pas encore de compte <br>Créé votre compte</a></div>
-            </div>
-        </div>
-    <!-- </fieldset>
-</form> -->
+        <div><a class="btn-style" href="signup">Créer un compte</a></div>
+    </fieldset>
+</form>

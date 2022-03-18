@@ -40,11 +40,12 @@ app.get('/signup', controllers.getSignup);
 app.get('/login', controllers.getLogin);
 app.get('/profil', controllers.getProfil);
 app.get('/', controllers.index);
+app.get("/deconnexion", controllers.getDeconnexion);
 
 
 app.post("/signupSubmit", controllers.postSignup);
 
-//app.post("/login", controllers.postLogin);
+app.post("/postlogin", controllers.postLogin);
 
 
 

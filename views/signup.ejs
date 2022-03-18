@@ -5,7 +5,6 @@
     <h1 class="page-header">SKI WAVES</h1>
     <form action="/signupSubmit" method="post">
         <fieldset>
-
             <h3 class="h3-class">Création de votre compte</h3>
             <div>
                 <label for="email">Email :</label>
@@ -19,6 +18,7 @@
                 <label for="name">Nom : </label>
                 <input type="text" name="name" id="name" required>
             </div>
+            <span><% if (!!signupFaile) {%> <%= signupFaile %> <%}%> </span>
             <div>
                 <button type="submit">Soumettre</button>
             </div>
