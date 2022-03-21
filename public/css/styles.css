@@ -1,35 +1,44 @@
+/* =========== header & navigation =========== */ 
 .body {
-  text-align: center;
   background-image: url(../image/skiRando.jpg);
   background-size: cover ;
 }
 img{
-  width: 5em;
+  width: 4em;
   border-radius: 15px;
+  height: 4em;
+  margin: 0px 10px 0px 10px;
 }
 .image{
-  position : fixed;
-  left : 10px;
-  top : 10px;
+  display : flex;
+  margin-top: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: left;
+  align-items: center;
+}
+h1 {
+  font-size: 5em;
+  color:rgb(255, 255, 255);
+  text-shadow: 1px 1px 2px rgb(68, 175, 236), 0 0 25px rgb(87, 184, 223), 0 0 5px rgb(0, 0, 255);
 }
 
+
+/* =========== formulaire login - signup =========== */ 
 label {
   display: inline-block;
   padding: 10px
 }
-
-h1 {
-  margin: 50px;
-  font-size: 5em;
-  color:rgb(255, 255, 255);
-  text-shadow: 1px 1px 2px rgb(68, 175, 236), 0 0 25px rgb(87, 184, 223), 0 0 5px rgb(0, 0, 255);
+.formulaire{
+  margin-left: 65%;
+  margin-bottom: 20px;
 }
 
 .form, form {
   display: inline-block;
   margin: 0 auto;
   width: 400px;
-
 }
 .champ {
   text-align: left;
@@ -55,14 +64,6 @@ div button {
 }
 .btn-style{
   color: white;
-}
-
-.profil {
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
-  background-color: rgba(255, 94, 0, 0.7);
-  border-radius: 15px 0px 30px 5px ;
 }
 .button{
   width: 175px;
@@ -108,10 +109,18 @@ div button {
   95% { opacity: 0.95; }
   100%   { opacity: 1; }
 }
+
+/* =========== profil =========== */ 
+.profil {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: rgba(255, 94, 0, 0.7);
+  border-radius: 15px 0px 30px 5px ;
+}
 .profilInfo{
   display: inline-block;
-  width: 25%;
-  margin-top: 70px;
+  margin-top: 20px;
   font-size: 1.5em;
   color: white;
 }
@@ -119,28 +128,12 @@ div button {
 .profilLeft{
   text-align: left;
   margin: 20px;
-  width: 80%;
 }
-
-nav ul{
-  list-style-type: none;
-  padding-left: 0;
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
+.titre{
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
-nav ul li{
-  padding: 10px;
-}
-nav a{
-  text-decoration: none;
-  color: rgb(250, 250, 250);;
-  transition: all 0.5s;
-  padding: 15px;
-}
-nav a:hover{
-  color: rgb(255, 255, 255);
-  font-weight: bolder;
-  border-bottom: 4px solid rgb(160, 245, 2);
-  background-color: rgb(13, 127, 161);
+#deconnexion{
+ margin-left: 150px;
 }
