@@ -4,7 +4,7 @@ const axios = require("axios");
 const SkiApi = "https://ski-api.herokuapp.com";
 
 exports.index = (req, res) => {
-    res.render('index');
+    res.render('profil');
 };
 
 exports.getSignup = (req, res) => {
@@ -35,7 +35,7 @@ exports.getProfil = (req, res) => {
 
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
-    res.render('index');
+    res.render('login', {loginFaile:""});  //deconnexion on revient sur la page login
 
 }
 exports.postSignup = (req, res) => {
