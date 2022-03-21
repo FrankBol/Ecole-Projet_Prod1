@@ -37,11 +37,9 @@ app.use(morgan('tiny'));
 const controllers = require("./controllers/controllerRoute");
 
 app.get('/signup', controllers.getSignup);
-app.get('/login', controllers.getLogin);
 app.get('/profil', controllers.getProfil);
-//app.get('/', controllers.index);
+app.get('/', controllers.getLogin);
 app.get("/deconnexion", controllers.getDeconnexion);
-
 
 app.post("/signupSubmit", controllers.postSignup);
 app.post("/postlogin", controllers.postLogin);

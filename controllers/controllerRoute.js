@@ -3,10 +3,6 @@ const axios = require("axios");
 
 const SkiApi = "https://ski-api.herokuapp.com";
 
-exports.index = (req, res) => {
-    res.render('profil');
-};
-
 exports.getSignup = (req, res) => {
     res.render('signup', {signupFaile : undefined});
 };
@@ -15,25 +11,25 @@ exports.getLogin = (req, res) => {
     res.render('login', {loginFaile : undefined});
 };
 
-// exports.getProfil = (req, res) => {
-//     if(res.app.locals.apiKey){
-//         res.render('profil', {name : res.app.locals.name, email : res.app.locals.email})
-//     }else{res.render("login", {loginFaile : undefined});}
-// };
 exports.getProfil = (req, res) => {
-        if(res.app.locals.apiKey){
-            
-            let token = res.app.locals.apiKey;
-            console.log(token);
-            axios.get(SkiApi+"/tokenInfo", { "access_token" : token })
-
-            .then(resultat =>{
-                console.log(resultat);
-                // res.render('profil', {name : undefined, email : undefined})
-
-            })
-        }else{res.render("login");}
+    if(res.app.locals.apiKey){
+        res.render('profil', {name : res.app.locals.name, email : res.app.locals.email});
+    }else{res.render("login", {loginFaile : undefined});}
 };
+// exports.getProfil = (req, res) => {
+//         if(res.app.locals.apiKey){
+            
+//             let token = res.app.locals.apiKey;
+//             console.log(token);
+//             axios.get(SkiApi+"/tokenInfo", { "access_token" : token })
+
+//             .then(resultat =>{
+//                 console.log(resultat);
+//                 // res.render('profil', {name : undefined, email : undefined})
+
+//             })
+//         }else{res.render("login");}
+// };
 
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
@@ -84,34 +80,3 @@ exports.postLogin = (req, res) => {
         res.render('login', {loginFaile : "Mauvais Mot de Passe ou Email"});
     });
 };
-
-
-// exports.postLogin = async (req,res) => {
-//     let email = req.body.email;
-//     let password = req.body.password;
-
-//     if (!!email && !!password) {
-//         const body = JSON.stringify({
-//             email: email,
-//             password: password
-//         });
-
-//         const res = await fetch("https://ski-api.herokuapp.com/login", {
-
-//             method: "POST",
-//             body,
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Accept': 'application/json'
-//             }
-
-//         });
-//         const data = await res.json();
-
-//         if (!!data.token) {
-//             //window.localStorage.setItem("ACCESS_TOKEN", data.token);
-//             console.log("bigWinner")
-//             //window.location.replace("/profil");
-//         }
-//     }
-// };
