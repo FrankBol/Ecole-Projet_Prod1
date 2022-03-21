@@ -15,23 +15,25 @@ exports.getLogin = (req, res) => {
     res.render('login', {loginFaile : undefined});
 };
 
-exports.getProfil = (req, res) => {
-    if(res.app.locals.apiKey){
-        res.render('profil', {name : res.app.locals.name, email : res.app.locals.email})
-    }else{res.render("login", {loginFaile : undefined});}
-};
 // exports.getProfil = (req, res) => {
-//         if(res.app.locals.apiKey){
-//             console.log(res.app.locals.apiKey);
-//             axios.get(SkiApi+"/tokenInfo",{headers:{apiKey :res.app.locals.apiKey}})
-
-//             .then(resultat =>{
-//                 console.log(resultat.data);
-//                 res.render('profil', {name : undefined, email : undefined})
-
-//             })
-//         }else{res.render("login");}
+//     if(res.app.locals.apiKey){
+//         res.render('profil', {name : res.app.locals.name, email : res.app.locals.email})
+//     }else{res.render("login", {loginFaile : undefined});}
 // };
+exports.getProfil = (req, res) => {
+        if(res.app.locals.apiKey){
+            
+            let token = res.app.locals.apiKey;
+            console.log(token);
+            axios.get(SkiApi+"/tokenInfo", { "access_token" : token })
+
+            .then(resultat =>{
+                console.log(resultat);
+                // res.render('profil', {name : undefined, email : undefined})
+
+            })
+        }else{res.render("login");}
+};
 
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
@@ -72,7 +74,7 @@ exports.postLogin = (req, res) => {
         res.app.locals.apiKey = data.token;
         res.app.locals.name = data.name;
         res.app.locals.email = data.email;
-        console.log(res.app.locals.email);
+        console.log(data);
         if(data){
             res.render('profil', {name : data.name, email : data.email});
         }else{ res.render('login')}

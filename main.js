@@ -44,7 +44,6 @@ app.get("/deconnexion", controllers.getDeconnexion);
 
 
 app.post("/signupSubmit", controllers.postSignup);
-
 app.post("/postlogin", controllers.postLogin);
 
 
