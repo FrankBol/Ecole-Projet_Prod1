@@ -1,0 +1,1 @@
+logo = () => window.location.assign("/profil")
