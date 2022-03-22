@@ -17,8 +17,7 @@ exports.getLogin = (req, res) => {
 //     }else{res.render("login", {loginFaile : undefined});}
 // };
 exports.getProfil = (req, res) => {
-        if(res.app.locals.apiKey){
-            
+        if(res.app.locals.apiKey){       
             let token = res.app.locals.apiKey;
             console.log(token);
             axios.get(SkiApi+"/tokenInfo", {headers: {"Authorization": token}})
@@ -29,12 +28,12 @@ exports.getProfil = (req, res) => {
                 res.render('profil', {name : data.name  , email : data.email})
 
             })
-        }else{res.render("login");}
+        }else{res.render("login", {loginFaile : undefined});}
 };
 
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
-    res.render('login', {loginFaile:""});  //deconnexion on revient sur la page login
+    res.render('login', {loginFaile: undefined});  //deconnexion on revient sur la page login
 
 }
 exports.postSignup = (req, res) => {
@@ -82,3 +81,68 @@ exports.postLogin = (req, res) => {
     });
 };
 
+
+exports.getSpot = (req, res) => {
+    let token = res.app.locals.apiKey;
+
+    axios.get(SkiApi+"/ski-spot",  {headers: {"Authorization": token}})
+    .then(resultat => {
+        spots =  resultat.data.skiSpots; 
+
+        axios.get(SkiApi+"/tokenInfo", {headers: {"Authorization": token}})
+        .then(resultat =>{
+            let name = resultat.data.name
+            res.render('spot', {spots, name });
+
+        })
+
+    }).catch(erreur => {
+        res.render("login", {loginFaile : undefined});
+    });
+    
+};
+
+exports.getCreateSpot = (req, res) => {
+    res.render("creeSpot");
+}
+
+exports.postCreateSpot = (req, res) => {
+    let token = res.app.locals.apiKey;
+    let description = req.body.description;
+    let name = req.body.name;
+    console.log(name);
+    console.log(token);
+    axios.post(SkiApi+"/ski-spot",
+        {
+            "description": description,
+            "name" : name,
+            "address": "test",
+            "difficulty":"facile",
+            "coordinates":[1,2]
+        },
+        {
+            headers: {
+                "Authorization": token,
+                }}
+    )
+    .then(resultat => {
+        console.log(resultat);
+        res.redirect('/spot');
+    })
+    .catch(erreur => {
+        console.log("ereur");
+        res.render("creeSpot");
+    });
+};
+
+exports.deleteSpot = (req, res) => {
+    let token = res.app.locals.apiKey;
+    let id = req.params.id;
+    
+    axios.delete(SkiApi+"/ski-spot/"+id,  {headers: {"Authorization": token}})
+    .then(resultat => {
+        res.redirect("/spot")
+    }).catch(erreur => {
+        res.redirect("/createSpot");
+    });
+}
