@@ -60,7 +60,7 @@ label {
   padding: 10px
 }
 .formulaire{
-  margin-left: calc(90%-400px); /* 65% */
+  margin-left: calc( 90% - 400px ); /* 65% */
   margin-bottom: 20px;
 }
 
