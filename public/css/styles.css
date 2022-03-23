@@ -3,6 +3,16 @@
   background-image: url(../image/skiRando.jpg);
   background-size: cover ;
 }
+.joke{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display:none;
+}
 img{
   width: 4em;
   border-radius: 15px;
