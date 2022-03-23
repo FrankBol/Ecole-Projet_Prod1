@@ -145,7 +145,6 @@ exports.deleteSpot = (req, res) => {
 
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
-    res.render('login', {
-        loginFaile: undefined
-    });
+    
+    res.render('login', {loginFaile: undefined});
 };
