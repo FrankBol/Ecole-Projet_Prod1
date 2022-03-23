@@ -46,8 +46,8 @@ app.post("/postlogin", controllers.postLogin);
 
 // Idée : Ajouter page 404 si URL invalide - sinon, laisser aller à page login par défaut
 // Page par défaut
-app.get('*', controllers.getLogin);
-
+/*app.get('*', controllers.getLogin);*/
+app.get('*', controllers.getError);
 
 
 

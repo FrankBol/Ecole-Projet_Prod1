@@ -136,13 +136,11 @@ div button {
  margin-left: 150px;
 }
 /* =========== message erreur =========== */
-span{
-  background-color: red;
-  margin-top: 20px;
+.error{
+  background-color: rgba(255, 94, 0, 0.7);
+  margin:0 auto;
   color: white;
-  display: inline-block;
-  
-  width: 250px;
+  width: 550px;
   padding: 10px;
   border-radius: 10px;
   
