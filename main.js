@@ -47,11 +47,14 @@ app.get("/deconnexion", controllers.getDeconnexion);
 app.post("/signupSubmit", controllers.postSignup);
 app.post("/postlogin", controllers.postLogin);
 
+
 app.get("/spot", controllers.getSpot);
 app.get("/createSpot", controllers.getCreateSpot);
 app.post("/createSpot", controllers.postCreateSpot);
 
 app.delete("/delete/:id", controllers.deleteSpot);
+
+
 
 
 
