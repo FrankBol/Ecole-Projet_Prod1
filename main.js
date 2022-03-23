@@ -30,6 +30,6 @@ app.post("/signupSubmit", controllers.postSignup);
 app.post("/postlogin", controllers.postLogin);
 
 app.get('*', controllers.getError);
-
+app.get('*', controllers.getErrorCreat);
 
 
