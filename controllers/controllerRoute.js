@@ -68,8 +68,6 @@ exports.postLogin = (req, res) => {
     .then(resultat => {
         let data = resultat.data;
         res.app.locals.apiKey = data.token;
-        res.app.locals.name = data.name;
-        res.app.locals.email = data.email;
         console.log(data);
         if(data){
             res.render('profil', {name : data.name, email : data.email});
