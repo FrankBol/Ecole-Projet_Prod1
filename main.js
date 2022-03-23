@@ -48,6 +48,6 @@ app.post("/postlogin", controllers.postLogin);
 // Page par défaut
 /*app.get('*', controllers.getLogin);*/
 app.get('*', controllers.getError);
-
+app.get('*', controllers.getErrorCreat);
 
 

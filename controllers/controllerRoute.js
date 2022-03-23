@@ -51,7 +51,7 @@ exports.postSignup = (req, res) => {
         res.render('login');
     })
     .catch(erreur => {
-        res.render("signup", {signupFaile : "Compte déjas existant"});
+        res.render('errorCreat', {signupFaile : "Compte déjas existant"});
     });
 };
 
@@ -82,5 +82,8 @@ exports.postLogin = (req, res) => {
 };
 exports.getError = (req, res) => {
     res.render('404', {loginFaile : undefined});
+};
+exports.getErrorCreat = (req, res) => {
+    res.render('errorCreat', {signupFaile : undefined});
 };
 
