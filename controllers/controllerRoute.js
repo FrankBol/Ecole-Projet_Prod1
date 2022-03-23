@@ -33,7 +33,7 @@ exports.getProfil = (req, res) => {
 
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
-    res.render('login', {loginFaile:""});  //deconnexion on revient sur la page login
+    res.render('login', {loginFaile:""});  
 
 }
 exports.postSignup = (req, res) => {
