@@ -78,7 +78,12 @@ exports.postLogin = (req, res) => {
 
     })
     .catch(erreur => {
-        res.render('login', {loginFaile : "Mauvais Mot de Passe ou Email"});
+        res.render('404', {loginFaile : "Mauvais Mot de Passe ou Email"});
     });
 };
+
+exports.getError = (req, res) => {
+    res.render('404', {loginFaile : undefined});
+};
+
 
