@@ -1,10 +1,11 @@
 const express = require("express");
 const app = new express();
 const expressLayouts = require('express-ejs-layouts');
-const dotenv = require('dotenv');
-dotenv.config({path:'./configuration.env'}); 
 const morgan = require('morgan');
 const controllers = require("./controllers/controllerRoute");
+
+const dotenv = require('dotenv');
+dotenv.config({path:'./configuration.env'}); 
 
 
 app.use(expressLayouts);
@@ -29,7 +30,5 @@ app.get("/deconnexion", controllers.getDeconnexion);
 app.post("/signupSubmit", controllers.postSignup);
 app.post("/postlogin", controllers.postLogin);
 
-app.get('*', controllers.getError);
-app.get('*', controllers.getErrorCreat);
 
 
