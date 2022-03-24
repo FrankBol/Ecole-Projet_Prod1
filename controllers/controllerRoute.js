@@ -22,7 +22,7 @@ exports.getProfil = (req, res) => {
             })
             .catch(erreur => res.render('login', {loginFailed: undefined}));
 
-    } else {res.render("login", {loginFaile: undefined});}
+    } else {res.render("login", {loginFailed: undefined});}
 };
 
 exports.postSignup = (req, res) => {
@@ -36,7 +36,7 @@ exports.postSignup = (req, res) => {
             "password": password,
             "name": name
         })
-    .then(resultat => {res.render('login',{ signupFailed: undefined});})
+    .then(resultat => {res.render('login',{ loginFailed: undefined});})
 
     .catch(erreur => {res.render("signup",{ signupFailed : "Erreur de création de compte existant"});});
 };
@@ -82,7 +82,7 @@ exports.getSpot = (req, res) => {
                     res.render('testSpot', { spots, name, deleteFaile : undefined });
                 })
         }).catch(erreur => {
-            res.render("login", { loginFaile: undefined });
+            res.render("login", { loginFailed: undefined });
         });
 };
 
@@ -91,7 +91,7 @@ exports.getCreateSpot = (req, res) => {
     if(token){
         res.render("testCreate", { createFailed : undefined });
     }
-    else{res.render("login", { loginFaile : undefined });}
+    else{res.render("login", { loginFailed : undefined });}
 };
 
 exports.postCreateSpot = (req, res) => {
