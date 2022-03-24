@@ -37,7 +37,7 @@ exports.postSignup = (req, res) => {
             "name" : name
         }
     )
-    .then(resultat => {res.render('login');})
+    .then(resultat => {res.render('login',{loginFailed : undefined});})
 
     .catch(erreur => {res.render('signup',{loginFailed : "Erreur de création de compte existant"});});
 };
@@ -66,5 +66,5 @@ exports.getDeconnexion = (req, res) => {
 };
 
 exports.error404 = (req, res) => {
-    res.render("error404")
+    res.render("error404");
 }
