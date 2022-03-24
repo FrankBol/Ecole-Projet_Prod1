@@ -20,9 +20,9 @@ exports.getProfil = (req, res) => {
                 res.render('profil', {name : data.name  , email : data.email});
 
             })
-            .catch(erreur => {res.render("login");});
+            .catch(erreur => {res.render("login", {loginFailed : undefined});});
 
-        }else{res.render("login", );}
+        }else{res.render("login", {loginFailed : undefined});}
 };
 
 exports.postSignup = (req, res) => {
@@ -62,7 +62,7 @@ exports.postLogin = (req, res) => {
 
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
-    res.render('login');  
+    res.render('login', {loginFailed : undefined});  
 };
 
 exports.error404 = (req, res) => {
