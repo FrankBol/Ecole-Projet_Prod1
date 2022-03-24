@@ -151,13 +151,13 @@ exports.oneSpot = (req, res) => {
     console.log(id);
     console.log(token);
 
-    axios.get("http://localhost:8081/ski-spot/" + id, {
+    axios.get(SkiApi + "/ski-spot/" + id, {
 
             headers: {"Authorization": token}
         })
         .then(resultat => {
-            console.log(resultat);
-            res.render("testOneSpot", { name : resultat.name });
+            console.log(resultat.data);
+            res.render("testOneSpot", { name : resultat.data.skiSpot.name });
         }).catch(erreur => {
             res.render("login");
         });
