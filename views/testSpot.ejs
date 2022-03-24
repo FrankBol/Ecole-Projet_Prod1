@@ -1,0 +1,14 @@
+<h1><%= name %></h1>
+
+<% spots.forEach(spot => { %>
+<div style="border: solid 2px black">
+    <h3><%= spot.name %></h3>
+    <p><%= spot.description %></p>
+    <p><%= spot.address %></p>
+    <p><%= spot.difficulty %></p>
+    <p><%= spot.coordinates %></p>
+    <%= deleteFaile %>
+    <form action="/delete/<%= spot._id %>?_method=delete" method="post"><button>Supprimé</button></form>
+    <form action="/oneSpot/<%= spot._id %>" method="get"><button>Information</button></form>
+</div>
+<% }) %>

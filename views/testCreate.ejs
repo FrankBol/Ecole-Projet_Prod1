@@ -1,0 +1,11 @@
+<form action="/createSpot" method="post">
+    <input type="text" name="name">name <br>
+    <input type="text" name="description">description <br>
+    <input type="text" name="address">address<br>
+    <input type="text" name="difficulty">difficulty<br>
+    <input type="text" name="coordinates">coordinates<br>
+    <button type="submit">créé</button>
+    <%= createFailed %>
+</form>
+<form method="get" action="/spot"><button type="submit">Spot</button></form>
+
