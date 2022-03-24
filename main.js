@@ -36,10 +36,10 @@ app.use(express.static("public"));
 const morgan = require('morgan');
 app.use(morgan('tiny'));
 
-const controllers = require("./controllers/controllerRoute");
+const controllers = require("./routes/controllerRoute");
 
 
-app.get('/signup', controllers.getSignup);
+/*app.get('/signup', controllers.getSignup);
 app.get('/profil', controllers.getProfil);
 app.get('/', controllers.getLogin);
 app.get("/deconnexion", controllers.getDeconnexion);
@@ -53,9 +53,11 @@ app.get("/spot", controllers.getSpot);
 app.get("/createSpot", controllers.getCreateSpot);
 app.post("/createSpot", controllers.postCreateSpot);
 
-app.delete("/delete/:id", controllers.deleteSpot);
+app.delete("/delete/:id", controllers.deleteSpot);*/
 
-
+/*Reprise des routes*/
+const userRoutes = require('./routes/users');
+app.use(userRoutes);
 
 
 
