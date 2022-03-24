@@ -9,6 +9,11 @@ exports.getLogin = (req, res) => {
     res.render('login', {loginFailed: undefined});
 };
 
+exports.getDeconnexion = (req, res) => {
+    res.app.locals.apiKey = "";
+    res.render('login', {loginFailed : undefined});  
+};
+
 exports.getProfil = (req, res) => {
     if (res.app.locals.apiKey) {
         let token = res.app.locals.apiKey;
@@ -57,15 +62,6 @@ exports.postLogin = (req, res) => {
             res.render('profil', {name: data.name,email: data.email});
         })
         .catch(erreur => {res.render('login', {loginFailed: "Mauvais mot de passe ou login"});});
-};
-
-exports.getDeconnexion = (req, res) => {
-    res.app.locals.apiKey = "";
-    res.render('login', {loginFailed : undefined});  
-};
-
-exports.error404 = (req, res) => {
-    res.render("error404");
 };
 
 exports.getSpot = (req, res) => {
@@ -124,20 +120,6 @@ exports.postCreateSpot = (req, res) => {
         });
 };
 
-exports.deleteSpot = (req, res) => {
-    let token = res.app.locals.apiKey;
-    let id = req.params.id;
-
-    axios.delete(SkiApi + "/ski-spot/" + id, {
-
-            headers: {"Authorization": token}
-        })
-        .then(resultat => {
-            res.redirect("/spot");
-        }).catch(erreur => {
-            res.render({deleteFaile : "Problème dans la suppression du Spot"});
-        });
-};
 
 exports.oneSpot = (req, res) => {
     let token = res.app.locals.apiKey;
@@ -155,4 +137,23 @@ exports.oneSpot = (req, res) => {
         }).catch(erreur => {
             res.render("login");
         });
+};
+
+exports.deleteSpot = (req, res) => {
+    let token = res.app.locals.apiKey;
+    let id = req.params.id;
+
+    axios.delete(SkiApi + "/ski-spot/" + id, {
+
+            headers: {"Authorization": token}
+        })
+        .then(resultat => {
+            res.redirect("/spot");
+        }).catch(erreur => {
+            res.render({deleteFaile : "Problème dans la suppression du Spot"});
+        });
+};
+
+exports.error404 = (req, res) => {
+    res.render("error404");
 };
