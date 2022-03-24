@@ -1,16 +1,18 @@
-/* =========== header & navigation =========== */ 
+/* =========== header & navigation =========== */
 .body {
   background-image: url(../image/skiRando.jpg);
-  background-size: cover ;
+  background-size: cover;
 }
-img{
+
+img {
   width: 4em;
   border-radius: 15px;
   height: 4em;
   margin: 0px 10px 0px 10px;
 }
-.image{
-  display : flex;
+
+.image {
+  display: flex;
   margin-top: 10px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -18,68 +20,141 @@ img{
   justify-content: left;
   align-items: center;
 }
+
 h1 {
   font-size: 5em;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   text-shadow: 1px 1px 2px rgb(68, 175, 236), 0 0 25px rgb(87, 184, 223), 0 0 5px rgb(0, 0, 255);
 }
-.button, .h1FonduIndex{
-  -webkit-animation: fadein 3.5s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3.5s; /* Firefox < 16 */
-   -ms-animation: fadein 3.5s; /* Internet Explorer */
-    -o-animation: fadein 3.5s; /* Opera < 12.1 */
-       animation: fadein 3.5s;
+
+.button,
+.h1FonduIndex {
+  -webkit-animation: fadein 3.5s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3.5s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 3.5s;
+  /* Internet Explorer */
+  -o-animation: fadein 3.5s;
+  /* Opera < 12.1 */
+  animation: fadein 3.5s;
 }
+
 @keyframes fadein {
-  0% { opacity: 0; }
-  10% { opacity: 0.1; }
-  15% { opacity: 0.15; }
-  20% { opacity: 0.2; }
-  25% { opacity: 0.25; }
-  30% { opacity: 0.3; }
-  35% { opacity: 0.35; }
-  40% { opacity: 0.4; }
-  45% { opacity: 0.45; }
-  50% { opacity: 0.5; }
-  55% { opacity: 0.55; }
-  60% { opacity: 0.6; }
-  65% { opacity: 0.65; }
-  70% { opacity: 0.7; }
-  75% { opacity: 0.75; }
-  80% { opacity: 0.8; }
-  85% { opacity: 0.85; }
-  90% { opacity: 0.9; }
-  95% { opacity: 0.95; }
-  100%   { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.1;
+  }
+
+  15% {
+    opacity: 0.15;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  30% {
+    opacity: 0.3;
+  }
+
+  35% {
+    opacity: 0.35;
+  }
+
+  40% {
+    opacity: 0.4;
+  }
+
+  45% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  55% {
+    opacity: 0.55;
+  }
+
+  60% {
+    opacity: 0.6;
+  }
+
+  65% {
+    opacity: 0.65;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  85% {
+    opacity: 0.85;
+  }
+
+  90% {
+    opacity: 0.9;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 
-/* =========== formulaire login - signup =========== */ 
+/* =========== formulaire login - signup =========== */
 label {
   display: inline-block;
   padding: 10px
 }
-.formulaire{
-  margin-left: calc( 90% - 400px ); /* 65% */
+
+.formulaire {
+  margin-left: calc(90% - 400px);
+  /* 65% */
   margin-bottom: 20px;
 }
 
-.form, form {
+.form,
+form {
   display: inline-block;
   margin: 0 auto;
   width: 400px;
 }
+
 .champ {
   text-align: left;
   display: block;
 }
 
-.cadre, fieldset {
+.cadre,
+fieldset {
   text-align: center;
   padding: 50px;
   background-color: rgba(255, 94, 0, 0.7);
-  border-radius: 15px 0px 30px 5px ;
+  border-radius: 15px 0px 30px 5px;
 }
+
 .h3-class {
   color: white;
 }
@@ -88,17 +163,20 @@ div>label {
   color: white;
   width: 150px;
 }
+
 div button {
   margin: 40px;
 }
-.btn-style{
+
+.btn-style {
   color: white;
 }
-.button{
+
+.button {
   width: 175px;
   background-color: rgba(255, 94, 0, 0.7);
   display: inline-block;
-  border-radius: 15px 0px 30px 5px ;
+  border-radius: 15px 0px 30px 5px;
   color: #ffffff;
   text-align: center;
   font-weight: bolder;
@@ -108,41 +186,46 @@ div button {
   cursor: pointer;
   margin: 5px;
 }
-/* =========== profil =========== */ 
+
+/* =========== profil =========== */
 .profil {
   width: 400px;
   height: 300px;
   margin: 0 auto;
   background-color: rgba(255, 94, 0, 0.7);
-  border-radius: 15px 0px 30px 5px ;
+  border-radius: 15px 0px 30px 5px;
 }
-.profilInfo{
+
+.profilInfo {
   display: inline-block;
   margin-top: 20px;
   font-size: 1.5em;
   color: white;
 }
 
-.profilLeft{
+.profilLeft {
   text-align: left;
   margin: 20px;
 }
-.titre{
+
+.titre {
   color: white;
   text-align: center;
   padding: 20px;
 }
-#deconnexion{
- margin-left: 150px;
+
+#deconnexion {
+  margin-left: 150px;
 }
+
 /* =========== message erreur =========== */
-.error{
+.error {
+  display: block;
   background-color: rgba(255, 94, 0, 0.7);
-  margin:0 auto;
   color: white;
-  width: 550px;
+  /* width: 550px; */
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  
+
 }
