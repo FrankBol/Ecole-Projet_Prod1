@@ -64,3 +64,7 @@ exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
     res.render('login');  
 };
+
+exports.error404 = (req, res) => {
+    res.render("error404")
+}
