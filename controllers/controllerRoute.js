@@ -145,6 +145,24 @@ exports.deleteSpot = (req, res) => {
         });
 };
 
+exports.oneSpot = (req, res) => {
+    let token = res.app.locals.apiKey;
+    let id = req.params.id;
+    console.log(id);
+    console.log(token);
+
+    axios.get("http://localhost:8081/ski-spot/" + id, {
+
+            headers: {"Authorization": token}
+        })
+        .then(resultat => {
+            console.log(resultat);
+            res.render("testOneSpot", { name : resultat.name });
+        }).catch(erreur => {
+            res.render("login");
+        });
+};
+
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
     

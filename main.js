@@ -43,6 +43,7 @@ app.get('/signup', controllers.getSignup);
 app.get('/profil', controllers.getProfil);
 app.get('/', controllers.getLogin);
 app.get("/deconnexion", controllers.getDeconnexion);
+app.get("/oneSpot/:id", controllers.oneSpot);
 
 app.post("/signupSubmit", controllers.postSignup);
 app.post("/postlogin", controllers.postLogin);
