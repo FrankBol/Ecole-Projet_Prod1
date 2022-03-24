@@ -6,7 +6,7 @@ exports.getSignup = (req, res) => {
 };
 
 exports.getLogin = (req, res) => {
-    res.render('login');
+    res.render('login', {loginFailed : undefined});
 };
 
 exports.getProfil = (req, res) => {
@@ -22,7 +22,7 @@ exports.getProfil = (req, res) => {
             })
             .catch(erreur => {res.render("login");});
 
-        }else{res.render("login");}
+        }else{res.render("login", );}
 };
 
 exports.postSignup = (req, res) => {
@@ -57,7 +57,7 @@ exports.postLogin = (req, res) => {
 
         res.render('profil', {name : data.name, email : data.email});
     })
-    .catch(erreur => {res.render('errorLogin');});
+    .catch(erreur => {res.render("login" ,{loginFailed : "Mauvais mot de passe ou login"});});
 };
 
 exports.getDeconnexion = (req, res) => {
