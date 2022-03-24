@@ -2,7 +2,7 @@ const axios = require("axios");
 const SkiApi = "https://ski-api.herokuapp.com";
 
 exports.getSignup = (req, res) => {
-    res.render('signup');
+    res.render('signup', {loginFailed : undefined});
 };
 
 exports.getLogin = (req, res) => {
@@ -39,7 +39,7 @@ exports.postSignup = (req, res) => {
     )
     .then(resultat => {res.render('login');})
 
-    .catch(erreur => {res.render('errorCreat');});
+    .catch(erreur => {res.render('signup',{loginFailed : "Erreur de création de compte existant"});});
 };
 
 exports.postLogin = (req, res) => {
