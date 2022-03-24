@@ -99,12 +99,6 @@ exports.getCreateSpot = (req, res) => {
     }
     else{res.render("login", { loginFaile : undefined });}
 };
-// let a = "1,2,3,4"
-// let b = a.split(",")
-
-// const nuevo = b.map( (i) => Number(i));
-// console.log(nuevo);
-
 
 exports.postCreateSpot = (req, res) => {
     let token = res.app.locals.apiKey;
@@ -112,7 +106,7 @@ exports.postCreateSpot = (req, res) => {
     let name = req.body.name;
     let address = req.body.address;
     let difficulty = req.body.difficulty;
-    
+
     let coordinates =  req.body.coordinates;
     let tabCoordinates = coordinates.split(",");
     let numberTabCoordinates = tabCoordinates.map( i => Number(i));
