@@ -59,7 +59,7 @@ exports.postLogin = (req, res) => {
             let data = resultat.data;
             res.app.locals.apiKey = data.token;
 
-            res.render('profil', {name: data.name,email: data.email});
+            res.render('profil', {name: data.name, email: data.email});
         })
         .catch(erreur => {res.render('login', {loginFailed: "Mauvais mot de passe ou login"});});
 };
@@ -124,16 +124,14 @@ exports.postCreateSpot = (req, res) => {
 exports.oneSpot = (req, res) => {
     let token = res.app.locals.apiKey;
     let id = req.params.id;
-    console.log(id);
-    console.log(token);
 
     axios.get(SkiApi + "/ski-spot/" + id, {
 
             headers: {"Authorization": token}
         })
         .then(resultat => {
-            console.log(resultat.data);
-            res.render("testOneSpot", { name : resultat.data.skiSpot.name });
+            let info = resultat.data.skiSpot;
+            res.render("testOneSpot", { info});
         }).catch(erreur => {
             res.render("login");
         });
