@@ -1,4 +1,4 @@
-<div class="formulaire">
+<!-- <div class="formulaire">
     <form action="/signupSubmit" method="post">
         <fieldset>
             <h3 class="h3-class">Création de votre compte</h3>
@@ -21,4 +21,18 @@
             <div><a class="btn-style" href="/">Déjà Membre?<br>Connexion</a></div>
         </fieldset>
     </form>
-</div>
+</div> -->
+
+<div class="container">
+    <span class="error animated tada" id="msg"></span>
+    <form action="/signupSubmit" method="post" name="form1" class="box">
+      <h4>SKY<span>WAVES</span></h4>
+      <h5>Création de compte!</h5>
+        <input type="text" name="email" id="email" required placeholder="Email" autocomplete="off">
+        <i class="typcn typcn-eye" id="eye"></i>
+        <input type="password" name="password" id="password" required placeholder="Passsword" autocomplete="off">
+        <input type="text" name="name" id="name" placeholder="Nom" required>
+        <input type="submit" value="Créer" class="btn3">
+      </form>
+      <a href="/" class="dnthave">Déjà Membre? <br> Connectez-vous!</a>
+  </div>

@@ -1,4 +1,4 @@
-<script  src="js/profil.js" defer></script>
+<!-- <script  src="js/profil.js" defer></script>
 <div class="profil">
     <h2 class="titre">VOTRE PROFIL</h2>
     <div class="profilLeft">
@@ -8,3 +8,17 @@
     <form action="/deconnexion" method="get"><button id="deconnexion">Déconnexion</button></form>
 </div>
 </div>
+ -->
+<div class="container">
+    <span class="error animated tada" id="msg"></span>
+    <form action="/postlogin" method="post" name="form1" class="box">
+      <h4>SKY<span>WAVES</span></h4>
+      <h5>Votre Profil.</h5>
+      <div class="user one">
+        </div>
+        <i class="typcn typcn-eye" id="eye"></i>
+        <div><span class="profilInfo"> Prénom: </span ><span class="profilInfo"><%= name %></span></div>
+        <div><span class="profilInfo">Email :</span ><span class="profilInfo"><%= email %></span></div> 
+      </form>
+      <form action="/deconnexion" method="get"><button class="btn2" id="deconnexion">Déconnexion</button></form>
+  </div> 
