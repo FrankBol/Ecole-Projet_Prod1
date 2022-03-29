@@ -59,7 +59,7 @@ exports.postLogin = (req, res) => {
             let data = resultat.data;
             res.app.locals.apiKey = data.token;
 
-            res.render('profil', {name: data.name, email: data.email});
+            res.redirect('/spot');
         })
         .catch(erreur => {res.render('login', {loginFailed: "Mauvais mot de passe ou login"});});
 };
