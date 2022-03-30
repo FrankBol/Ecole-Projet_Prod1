@@ -131,6 +131,7 @@ exports.oneSpot = (req, res) => {
         })
         .then(resultat => {
             let info = resultat.data.skiSpot;
+            console.log(resultat);
             res.render("testOneSpot", { info});
         }).catch(erreur => {
             res.render("login");
