@@ -151,6 +151,60 @@ exports.deleteSpot = (req, res) => {
             res.render({deleteFaile : "Problème dans la suppression du Spot"});
         });
 };
+exports.testOneSpot = (req, res) => {
+    let token = res.app.locals.apiKey;
+    console.log(`token : ${token}`);
+    let id = req.params.id;
+    console.log(`id : ${id}`);
+    axios.get(SkiApi + "/ski-spot/" + id,
+    
+           {headers: {"Authorization": token}})
+
+        .then(resultat => {
+            let info = resultat.data.skiSpot;
+            res.render("update", {info:info});
+        })    
+        .catch(erreur => {
+             res.send(erreur);
+        });
+};
+
+exports.updateSpot = (req, res) => {
+    let id = req.params.id;
+    let token = res.app.locals.apiKey;
+
+    let description = req.body.description;
+    let name = req.body.name;
+    let address = req.body.address;
+    let difficulty = req.body.difficulty;
+    let coordinates = req.body.coordinates;
+    let tabCoordinates = coordinates.split(",");
+    let numberTabCoordinates = tabCoordinates.map( i => Number(i));
+
+    let info = {
+        "_id":id,
+        "description": description,
+        "name": name,
+        "address": address,
+        "difficulty": difficulty,
+        "coordinates": coordinates
+    };
+    axios.put(SkiApi + "/ski-spot/" + id, {
+            "name": name,
+            "description": description,
+            "address": address,
+            "difficulty": difficulty,
+            "coordinates": numberTabCoordinates,
+    }, 
+    { headers: {"Authorization": token}})
+    .then(resultat => {
+          res.redirect("/spot"); })
+    .catch(erreur => {
+          res.render("update",{info: info, updateFaile : "Problème dans la modification du Spot"});
+        });
+};
+
+  
 
 exports.error404 = (req, res) => {
     res.render("error404");
