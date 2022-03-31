@@ -18,6 +18,8 @@ router.get("/createSpot", controllerRoute.getCreateSpot);
 router.post("/createSpot", controllerRoute.postCreateSpot);
 
 router.delete("/delete/:id", controllerRoute.deleteSpot);
+router.get("/update/:id", controllerRoute.testOneSpot);
+router.put("/update/:id", controllerRoute.updateSpot);
 
 router.get("*", controllerRoute.error404);
 
