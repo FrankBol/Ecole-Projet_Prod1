@@ -6,7 +6,7 @@ exports.getSignup = (req, res) => {
 };
 
 exports.getLogin = (req, res) => {
-    res.render('login', {loginFailed: undefined});
+    res.render('login');
 };
 
 exports.getDeconnexion = (req, res) => {
@@ -61,7 +61,9 @@ exports.postLogin = (req, res) => {
 
             res.redirect('/spot');
         })
-        .catch(erreur => {res.render('login', {loginFailed: "Mauvais mot de passe ou login"});});
+        .catch(erreur => {
+            req.flash("error", `Mauvais Mot de Passe ou Email `);
+            res.redirect('/');});
 };
 
 exports.getSpot = (req, res) => {
