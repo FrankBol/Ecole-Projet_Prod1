@@ -25,9 +25,9 @@ exports.getProfil = (req, res) => {
                 res.render('profil', {name: data.name, email: data.email});
 
             })
-            .catch(() => res.render('login', {loginFailed: undefined}));
+            .catch(() => res.render('login'));
 
-    } else {res.render("login", {loginFailed: undefined});}
+    } else {res.render("login");}
 };
 
 exports.postSignup = (req, res) => {
@@ -41,7 +41,7 @@ exports.postSignup = (req, res) => {
             "password": password,
             "name": name
         })
-    .then(resultat => {res.render('login',{ loginFailed: undefined});})
+    .then(resultat => {res.render('login');})
 
     .catch(erreur => {
         req.flash("error", `Ce compte existe déjà`);
