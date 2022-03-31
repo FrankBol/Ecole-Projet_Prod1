@@ -65,7 +65,7 @@ exports.postLogin = (req, res) => {
         })
         .catch(() => {
             req.flash("error", `Mauvais Mot de Passe ou Email `);
-            res.render('login');});
+            res.redirect('/');});
 };
 
 exports.getSpot = (req, res) => {
