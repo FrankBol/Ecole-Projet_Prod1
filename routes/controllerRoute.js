@@ -2,7 +2,7 @@ const axios = require("axios");
 const SkiApi = "https://ski-api.herokuapp.com";
 
 exports.getSignup = (req, res) => {
-    res.render('signup', {signupFailed: undefined});
+    res.render('signup');
 };
 
 exports.getLogin = (req, res) => {
@@ -11,7 +11,7 @@ exports.getLogin = (req, res) => {
 
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
-    res.render('login', {loginFailed : undefined});  
+    res.render('login');  
 };
 
 exports.getProfil = (req, res) => {
@@ -25,7 +25,7 @@ exports.getProfil = (req, res) => {
                 res.render('profil', {name: data.name, email: data.email});
 
             })
-            .catch(erreur => res.render('login', {loginFailed: undefined}));
+            .catch(() => res.render('login', {loginFailed: undefined}));
 
     } else {res.render("login", {loginFailed: undefined});}
 };
@@ -43,7 +43,9 @@ exports.postSignup = (req, res) => {
         })
     .then(resultat => {res.render('login',{ loginFailed: undefined});})
 
-    .catch(erreur => {res.render("signup",{ signupFailed : "Erreur de création de compte existant"});});
+    .catch(erreur => {
+        req.flash("error", `Ce compte existe déjà`);
+        res.redirect("/signup");});
 };
 
 exports.postLogin = (req, res) => {
@@ -61,9 +63,9 @@ exports.postLogin = (req, res) => {
 
             res.redirect('/spot');
         })
-        .catch(erreur => {
+        .catch(() => {
             req.flash("error", `Mauvais Mot de Passe ou Email `);
-            res.redirect('/');});
+            res.render('login');});
 };
 
 exports.getSpot = (req, res) => {
@@ -185,20 +187,15 @@ exports.updateSpot = (req, res) => {
     let numberTabCoordinates = tabCoordinates.map( i => Number(i));
 
     let info = {
-        "_id":id,
         "description": description,
         "name": name,
         "address": address,
         "difficulty": difficulty,
-        "coordinates": coordinates
+        "coordinates": numberTabCoordinates
     };
-    axios.put(SkiApi + "/ski-spot/" + id, {
-            "name": name,
-            "description": description,
-            "address": address,
-            "difficulty": difficulty,
-            "coordinates": numberTabCoordinates,
-    }, 
+    axios.put(SkiApi + "/ski-spot/" + id, 
+            info,
+    
     { headers: {"Authorization": token}})
     .then(resultat => {
           res.redirect("/spot"); })
