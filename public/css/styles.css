@@ -527,10 +527,13 @@ label span {
   cursor: pointer;
 }
 .alert{
+  display: block;
+  position: absolute;
   background-color: red;
   width: 300px;
   height: 20px;
-  margin: 0 auto;
+  top: 60%;
+  left: 12%;
   border-radius: 10px;
   margin-top: 15px;
   color: white;
