@@ -11,12 +11,12 @@
                 <label for="password">Mot de passe :</label>
                 <input type="password" name="password" id="password" required>
             </div>
-            <% if(loginFailed!=undefined) { %> <div class="error"> <%= loginFailed %> </div> <% } %>
-            <div class="champs">
+            
                 <!-- <button onclick="login()">Se connecter</button>  -->
 <!--                 <button type="submit">Connexion</button>
             </div>
-            <div><a class="btn-style" href="signup">Créer un compte</a></div>
+            <div><a class="btn-style" href="nodemon
+              ">Créer un compte</a></div>
         </fieldset>
 </div>
 </form> -->
@@ -30,5 +30,6 @@
           <input type="password" name="password" id="password" required placeholder="Passsword" autocomplete="off">
           <input type="submit" value="Sign in" class="btn1" onclick="login()">
         </form>
+        <%- include("partials/messages") -%>
           <a href="signup" class="dnthave">Créer le compte!</a>
     </div> 
