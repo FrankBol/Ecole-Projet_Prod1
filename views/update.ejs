@@ -7,5 +7,5 @@
         <input type="text" value= "<%= info.difficulty %>" id="difficulty" name="difficulty">difficulty<br>
         <input type="text" value= "<%= info.coordinates %>" id="coordinates" name="coordinates">coordinates<br>
         <button type="submit">Soumettre</button>
-        <% if(locals.updateFaile) { %><%= updateFaile %><%}%>
+        <%- include("partials/messages") -%>
     </form>

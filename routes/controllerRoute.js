@@ -82,16 +82,16 @@ exports.getSpot = (req, res) => {
                     res.render('testSpot', { spots, name, deleteFaile : undefined });
                 })
         }).catch(erreur => {
-            res.render("login", { loginFailed: undefined });
+            res.render("login");
         });
 };
 
 exports.getCreateSpot = (req, res) => {
     let token = res.app.locals.apiKey;
     if(token){
-        res.render("testCreate", { createFailed : undefined });
+        res.render("testCreate");
     }
-    else{res.render("login", { loginFailed : undefined });}
+    else{res.render("login");}
 };
 
 exports.postCreateSpot = (req, res) => {
@@ -120,7 +120,8 @@ exports.postCreateSpot = (req, res) => {
             res.redirect('/spot');
         })
         .catch(erreur => {
-            res.render("testCreate", {createFailed : "Problème avec la création de Spot"});
+            req.flash("error", `Une Erreur c'est produite lors de la création de spot `);
+            res.redirect("/createSpot");
         });
 };
 
@@ -153,14 +154,14 @@ exports.deleteSpot = (req, res) => {
         .then(resultat => {
             res.redirect("/spot");
         }).catch(erreur => {
-            res.render({deleteFaile : "Problème dans la suppression du Spot"});
+            res.send(erreur);
         });
 };
 exports.testOneSpot = (req, res) => {
+
     let token = res.app.locals.apiKey;
-    console.log(`token : ${token}`);
     let id = req.params.id;
-    console.log(`id : ${id}`);
+
     axios.get(SkiApi + "/ski-spot/" + id,
     
            {headers: {"Authorization": token}})
@@ -200,11 +201,10 @@ exports.updateSpot = (req, res) => {
     .then(resultat => {
           res.redirect("/spot"); })
     .catch(erreur => {
-          res.render("update",{info: info, updateFaile : "Problème dans la modification du Spot"});
+        req.flash("error", `Une Erreur c'est produite lors de la modification du spot `);
+        res.render("update");
         });
 };
-
-  
 
 exports.error404 = (req, res) => {
     res.render("error404");

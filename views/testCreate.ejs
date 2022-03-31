@@ -6,7 +6,7 @@
         <input type="text" name="difficulty" placeholder="Dificulté">
         <input type="text" name="coordinates" placeholder="Coordinates">
         <button type="submit" class="btn4">Créer</button>
-        <%= createFailed %>
+        <%- include("partials/messages") -%>
     </form>
     <form method="get" action="/spot"><button type="submit" class="btn5">Spot</button></form>
 </div>
