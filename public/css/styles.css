@@ -293,11 +293,11 @@ div button {
 
 .box input[type = "text"],.box input[type = "password"] {
   display: block;
-  margin: 20px auto;
+  margin: 30px auto;
   background: #262e49;
   border: 0;
   border-radius: 5px;
-  padding: 14px 10px;
+  padding: 18px 10px;
   width: 320px;
   outline: none;
   color: #ffffff;
@@ -310,6 +310,7 @@ div button {
 }
 ::-webkit-input-placeholder {
   color: #c0bdbd;
+  font-size: 16px;
 }
 
 .box input[type = "text"]:focus,.box input[type = "password"]:focus {
@@ -475,4 +476,54 @@ label span {
   left: 7.2%;
   color: white;
   display: none;
+}
+
+
+/* Page create spot */
+
+.addSpot{
+  padding-bottom: 2%;
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: hwb(220 48% 50%);
+  opacity: 0.9;
+  border-radius: 9px;
+  border-top: 10px solid hwb(220 48% 50%);
+  border-bottom: 10px solid hwb(220 48% 50%);
+  width: 40%;
+  height: auto;
+  box-shadow: 1px 1px 108.8px 19.2px rgb(84, 84, 87);
+}
+
+.btn4{
+  border:0;
+  background: #7f5feb;
+  color: #dfdeee;
+  border-radius: 100px;
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
+  position: absolute;
+  top: 78%;
+  right: 11%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn5{
+  border:0;
+  background: #7f5feb;
+  color: #dfdeee;
+  border-radius: 100px;
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
+  position: absolute;
+  top: 78%;
+  left: 11%;
+  transition: 0.3s;
+  cursor: pointer;
 }
