@@ -581,3 +581,43 @@ h2 {
 img {
   box-shadow: 0 0 7px #dfdeee;
 }
+
+/* Page de spot */
+
+.oneSpot{
+  display: block;
+  max-width: 30%;
+  text-align: center;
+  justify-content: center;
+  background-color: hwb(220 48% 50%);
+  opacity: 0.9;
+  border-radius: 9px;
+  position: relative;
+  margin-top: 5px;
+  padding-top: 5px;
+  top: 28%;
+  left: 35%;
+  height: 350px;
+  border-top: 10px solid hwb(220 48% 50%);
+  border-bottom: 10px solid hwb(220 48% 50%);
+  box-shadow: 1px 1px 108.8px 19.2px rgb(84, 84, 87);
+}
+.oneSpotLabel{
+  color: black;
+  border-bottom: 1px solid black;
+  margin-top: 5px;
+}
+.btn6{
+  border:0;
+  background: #7f5feb;
+  color: #dfdeee;
+  border-radius: 100px;
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
+  position: absolute;
+  top: 75%;
+  left: 28%;
+  transition: 0.3s;
+  cursor: pointer;
+}

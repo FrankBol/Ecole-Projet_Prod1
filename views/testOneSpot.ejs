@@ -1,5 +1,21 @@
-<%= info.name %>
-<%= info.description %>
-<%= info.address %>
-<%= info.difficulty %>
-<%= info.coordinates %>
+<div>
+    <div class="oneSpot">
+        <label class="oneSpotLabel">
+            <%= info.name %>
+        </label><br>
+        <label class="oneSpotLabel">
+            <%= info.description %>
+        </label><br>
+        <label class="oneSpotLabel">
+            <%= info.address %>
+        </label><br>
+        <label class="oneSpotLabel">
+            <%= info.difficulty %>
+        </label><br>
+        <label style="color: black;">
+            <%= info.coordinates %>
+        </label>
+        <form method="get" action="/spot"><button type="submit" class="btn6">Spot</button></form>
+    </div>
+</div>
+
