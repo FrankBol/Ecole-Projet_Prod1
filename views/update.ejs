@@ -1,14 +1,20 @@
-    <div class="addSpot">
-        <!-- <h2>Modification du Spot</h2> -->
-        <form action="/update/<%= info._id %>?_method=put" method="post" class="box">
-            <input type="text" name="name" placeholder="Nom du Spot" value="<%= info.name %>">
-            <input type="text" name="description" placeholder="Description" value="<%= info.description %>">
-            <input type="text" name="address" placeholder="Adresse" value="<%= info.address %>">
-            <input type="text" name="difficulty" placeholder="Dificulté" value="<%= info.difficulty %>">
-            <input type="text" name="coordinates" placeholder="Coordinates" value="<%= info.coordinates %>">
-            <button type="submit" class="btn4">Soumettre</button>
-            <%- include("partials/messages") -%>
-        </form>
-        <form method="get" action="/spot"><button type="submit" class="btn5">Annuler</button></form>
-    </div>
+<div class="addSpot">
+    <!-- <h2>Modification du Spot</h2> -->
+    <form action="/update/<%= info._id %>?_method=put" method="post" class="box">
+        <input type="text" name="name" placeholder="Nom du Spot" value="<%= info.name %>">
+        <input type="text" name="description" placeholder="Description" value="<%= info.description %>">
+        <input type="text" name="address" placeholder="Adresse" value="<%= info.address %>">
+        <input type="text" name="difficulty" placeholder="Dificulté" value="<%= info.difficulty %>">
+        <input type="text" name="coordinates" placeholder="Coordinates" value="<%= info.coordinates %>">
+        <button type="submit" class="btn4">Soumettre</button>
+        <style>
+            .alert {
+                top:78%;
+                width:336px;
+            }
+        </style>            
+        <%- include("partials/messages") -%>
+    </form>
+    <form method="get" action="/spot"><button type="submit" class="btn5">Annuler</button></form>
+</div>
     

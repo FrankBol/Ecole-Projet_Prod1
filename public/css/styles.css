@@ -172,7 +172,7 @@ div>label {
 }
 
 div button {
-  margin: 40px;
+  margin: 40px 0;
 }
 
 .btn-style {
@@ -481,7 +481,7 @@ label span {
 /* Page create spot */
 
 .addSpot{
-  padding-bottom: 2%;
+  padding-bottom: 6%; /* 2%; */
   top: 30%;
   left: 50%;
   position: absolute;
@@ -506,7 +506,7 @@ label span {
   height: 40px;
   font-size: 16px;
   position: absolute;
-  top: 78%;
+  top: 79%;
   right: 11%;
   transition: 0.3s;
   cursor: pointer;
@@ -521,7 +521,7 @@ label span {
   height: 40px;
   font-size: 16px;
   position: absolute;
-  top: 78%;
+  top: 79%;
   left: 11%;
   transition: 0.3s;
   cursor: pointer;
