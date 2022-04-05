@@ -538,3 +538,46 @@ label span {
   margin-top: 15px;
   color: white;
 }
+
+/* Page de spots */
+
+.listeSpots {
+  display: inline-block;
+  min-width: 80%;
+  justify-content: center;
+  background-color: hwb(220 48% 50%);
+  opacity: 0.9;
+  border-radius: 9px;
+  border-top: 10px solid hwb(220 48% 50%);
+  border-bottom: 10px solid hwb(220 48% 50%);
+  box-shadow: 1px 1px 108.8px 19.2px rgb(84, 84, 87);
+}
+
+.btn-default {
+  border: 0;
+  background: #7f5feb;
+  color: #dfdeee;
+  border-radius: 100px;
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+p {
+  font-size: 1.2em;
+  word-wrap: break-word;
+}
+
+h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.9em;
+  color: #7f5feb;
+  text-shadow: 0 0 2px #dfdeee;
+}
+
+img {
+  box-shadow: 0 0 7px #dfdeee;
+}
