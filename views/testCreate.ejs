@@ -1,11 +1,12 @@
-<form action="/createSpot" method="post">
-    <input type="text" name="name">name <br>
-    <input type="text" name="description">description <br>
-    <input type="text" name="address">address<br>
-    <input type="text" name="difficulty">difficulty<br>
-    <input type="text" name="coordinates">coordinates<br>
-    <button type="submit">créé</button>
-    <%= createFailed %>
-</form>
-<form method="get" action="/spot"><button type="submit">Spot</button></form>
-
+<div class="addSpot">
+    <form action="/createSpot" method="post" class="box">
+        <input type="text" name="name" placeholder="Nom du Spot">
+        <input type="text" name="description" placeholder="Description">
+        <input type="text" name="address" placeholder="Adresse">
+        <input type="text" name="difficulty" placeholder="Dificulté">
+        <input type="text" name="coordinates" placeholder="Coordinates">
+        <button type="submit" class="btn4">Créer</button>
+        <%- include("partials/messages") -%>
+    </form>
+    <form method="get" action="/spot"><button type="submit" class="btn5">Spot</button></form>
+</div>

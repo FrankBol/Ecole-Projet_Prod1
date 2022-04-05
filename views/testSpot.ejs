@@ -7,8 +7,9 @@
     <p><%= spot.address %></p>
     <p><%= spot.difficulty %></p>
     <p><%= spot.coordinates %></p>
-    <%= deleteFaile %>
+
     <form action="/delete/<%= spot._id %>?_method=delete" method="post"><button>Supprimé</button></form>
+    <form action="/update/<%= spot._id %>?" method="get"><button>Modifié</button></form>
     <form action="/oneSpot/<%= spot._id %>" method="get"><button>Information</button></form>
 </div>
 <% }) %>

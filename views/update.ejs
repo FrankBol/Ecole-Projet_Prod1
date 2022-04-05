@@ -1,0 +1,11 @@
+<form action="/update/<%= info._id %>?_method=put" method="post">
+
+    <h2>Un autre beau Spot</h2>
+        <input type="text" value= "<%= info.name %>" id="name" name="name">name <br>
+        <input type="text" value= "<%= info.description %>" id="description" name="description">description <br>
+        <input type="text" value= "<%= info.address %>" id="address" name="address">address<br>
+        <input type="text" value= "<%= info.difficulty %>" id="difficulty" name="difficulty">difficulty<br>
+        <input type="text" value= "<%= info.coordinates %>" id="coordinates" name="coordinates">coordinates<br>
+        <button type="submit">Soumettre</button>
+        <%- include("partials/messages") -%>
+    </form>
