@@ -1,1 +1,1 @@
-logo = () => window.location.assign("/profil")
+logo = () => window.location.assign("/profil");

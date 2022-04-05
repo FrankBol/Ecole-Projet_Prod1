@@ -31,7 +31,7 @@ app.use(expressLayouts);
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 app.use(methodOverride("_method"));  
-app.use(express.static("public"));
+app.use('/', express.static('public'));
 app.use(morgan('tiny'));
 
 app.set('layout','../views/layouts/applayout');
