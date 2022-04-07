@@ -1,3 +1,6 @@
+<%- include('./partials/head'); -%>
+<%- include('./partials/header'); -%>
+
 <div class="container">
     <span class="error animated tada" id="msg"></span>
     <form action="/users/signup" method="post" name="form1" class="box">
@@ -12,3 +15,4 @@
       <%- include("partials/messages") -%>
       <a href="/" class="dnthave">Déjà Membre? <br> Connectez-vous!</a>
   </div>
+  <%- include('./partials/footer'); -%>

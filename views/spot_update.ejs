@@ -1,3 +1,7 @@
+<%- include('./partials/head'); -%>
+<%- include('./partials/navbar') -%>
+<%- include('./partials/header'); -%>
+
 <div class="addSpot">
     <!-- <h2>Modification du Spot</h2> -->
     <form action="/spots/update/<%= info._id %>?_method=put" method="post" class="box">
@@ -15,6 +19,6 @@
         </style>            
         <%- include("partials/messages") -%>
     </form>
-    <form method="get" action="/"><button type="submit" class="btn5">Spots</button></form>
+    <form method="get" action="/"><button type="submit" class="btn5">Annuler</button></form>
 </div>
-    
+<%- include('./partials/footer'); -%>
