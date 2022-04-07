@@ -651,9 +651,11 @@ li a {
 
 li a:hover:not(.active) {
   background-color: #3b476b;
+ 
 }
+
 .active {
-  margin-bottom: 15px;
+ 
   border-radius: 15px;
 }
 .btn-deconnex{
