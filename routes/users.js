@@ -3,23 +3,20 @@ const router = express.Router();
 const controllerRoute = require('./controllerRoute');
 
 
-router.get('/signup', controllerRoute.getSignup);
-router.get('/profil', controllerRoute.getProfil);
-router.get('/', controllerRoute.getLogin);
-router.get("/deconnexion", controllerRoute.getDeconnexion);
-router.get("/oneSpot/:id", controllerRoute.oneSpot);
+router.get('/users/signup', controllerRoute.getSignup);
+router.post("/users/signup", controllerRoute.postSignup);
+router.post("/users/login", controllerRoute.postLogin);
+router.get('/users/profil', controllerRoute.getProfil);
+router.get("/users/logout", controllerRoute.getDeconnexion);
 
-router.post("/signupSubmit", controllerRoute.postSignup);
-router.post("/postlogin", controllerRoute.postLogin);
+router.get("/spots/create", controllerRoute.getCreateSpot);
+router.post("/spots/create", controllerRoute.postCreateSpot);
+router.delete("/spots/delete/:id", controllerRoute.deleteSpot);
+router.get("/spots/update/:id", controllerRoute.getUpdateSpot);
+router.put("/spots/update/:id", controllerRoute.postUpdateSpot);
+router.get("/spots/:id", controllerRoute.getSpotInformation);
 
-
-router.get("/spot", controllerRoute.getSpot);
-router.get("/createSpot", controllerRoute.getCreateSpot);
-router.post("/createSpot", controllerRoute.postCreateSpot);
-
-router.delete("/delete/:id", controllerRoute.deleteSpot);
-router.get("/update/:id", controllerRoute.testOneSpot);
-router.put("/update/:id", controllerRoute.updateSpot);
+router.get("/", controllerRoute.getSpots);
 
 router.get("*", controllerRoute.error404);
 

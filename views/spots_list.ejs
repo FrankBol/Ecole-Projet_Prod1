@@ -22,11 +22,11 @@
             </div>
             <div>
                 <div style="display:flex; flex-wrap:wrap; justify-content: space-between;">
-                    <form action="/delete/<%= spot._id %>?_method=delete" method="post" style="width:auto;"><button
+                    <form action="/spots/delete/<%= spot._id %>?_method=delete" method="post" style="width:auto;"><button
                             class="btn-default">Supprimé</button></form>
-                    <form action="/update/<%= spot._id %>?" method="get" style="width:auto;"><button
+                    <form action="/spots/update/<%= spot._id %>?" method="get" style="width:auto;"><button
                             class="btn-default">Modifié</button></form>
-                    <form action="/oneSpot/<%= spot._id %>" method="get" style="width:auto;"><button
+                    <form action="/spots/<%= spot._id %>" method="get" style="width:auto;"><button
                             class="btn-default">Information</button></form>
                 </div>
             </div>
