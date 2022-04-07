@@ -45,7 +45,7 @@ exports.postSignup = (req, res) => {
 
     .catch(erreur => {
         req.flash("error", `Ce compte existe déjà`);
-        res.redirect("/signup");});
+        res.redirect("/users/signup");});
 };
 
 exports.postLogin = (req, res) => {
@@ -114,7 +114,7 @@ exports.postCreateSpot = (req, res) => {
             "coordinates": numberTabCoordinates
         }, 
 
-        {headers: {"Authorization": token,}})
+        {headers: {"Authorization": token}})
 
         .then(resultat => {
             res.redirect('/');
@@ -124,7 +124,6 @@ exports.postCreateSpot = (req, res) => {
             res.redirect("/spots/create");
         });
 };
-
 
 exports.getSpotInformation = (req, res) => {
     let token = res.app.locals.apiKey;
@@ -136,7 +135,6 @@ exports.getSpotInformation = (req, res) => {
         })
         .then(resultat => {
             let info = resultat.data.skiSpot;
-            console.log(resultat);
             res.render("spot_information", { info});
         }).catch(erreur => {
             res.render("login");
@@ -157,6 +155,7 @@ exports.deleteSpot = (req, res) => {
             res.send(erreur);
         });
 };
+
 exports.getUpdateSpot = (req, res) => {
 
     let token = res.app.locals.apiKey;

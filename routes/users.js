@@ -10,7 +10,6 @@ router.get('/users/profil', controllerRoute.getProfil);
 router.get("/users/logout", controllerRoute.getDeconnexion);
 
 
-
 router.get("/spots/create", controllerRoute.getCreateSpot);
 router.post("/spots/create", controllerRoute.postCreateSpot);
 router.delete("/spots/delete/:id", controllerRoute.deleteSpot);
