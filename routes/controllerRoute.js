@@ -61,14 +61,14 @@ exports.postLogin = (req, res) => {
             let data = resultat.data;
             res.app.locals.apiKey = data.token;
 
-            res.redirect('/spot');
+            res.redirect('/');
         })
         .catch(() => {
             req.flash("error", `Mauvais Mot de Passe ou Email `);
             res.redirect('/');});
 };
 
-exports.getSpot = (req, res) => {
+exports.getSpots = (req, res) => {
     let token = res.app.locals.apiKey;
 
     axios.get(SkiApi + "/ski-spot", {headers: {"Authorization": token}})
@@ -79,7 +79,7 @@ exports.getSpot = (req, res) => {
                 .then(resultat => {
                     let name = resultat.data.name;
 
-                    res.render('testSpot', { spots, name, deleteFaile : undefined });
+                    res.render('spots_list', { spots, name, deleteFaile : undefined });
                 })
         }).catch(erreur => {
             res.render("login");
@@ -89,7 +89,7 @@ exports.getSpot = (req, res) => {
 exports.getCreateSpot = (req, res) => {
     let token = res.app.locals.apiKey;
     if(token){
-        res.render("testCreate");
+        res.render("spot_creation");
     }
     else{res.render("login");}
 };
@@ -117,16 +117,16 @@ exports.postCreateSpot = (req, res) => {
         {headers: {"Authorization": token,}})
 
         .then(resultat => {
-            res.redirect('/spot');
+            res.redirect('/');
         })
         .catch(erreur => {
             req.flash("error", `Une Erreur c'est produite lors de la création de spot `);
-            res.redirect("/createSpot");
+            res.redirect("/spots/create");
         });
 };
 
 
-exports.oneSpot = (req, res) => {
+exports.getSpotInformation = (req, res) => {
     let token = res.app.locals.apiKey;
     let id = req.params.id;
 
@@ -137,7 +137,7 @@ exports.oneSpot = (req, res) => {
         .then(resultat => {
             let info = resultat.data.skiSpot;
             console.log(resultat);
-            res.render("testOneSpot", { info});
+            res.render("spot_information", { info});
         }).catch(erreur => {
             res.render("login");
         });
@@ -152,12 +152,12 @@ exports.deleteSpot = (req, res) => {
             headers: {"Authorization": token}
         })
         .then(resultat => {
-            res.redirect("/spot");
+            res.redirect("/");
         }).catch(erreur => {
             res.send(erreur);
         });
 };
-exports.testOneSpot = (req, res) => {
+exports.getUpdateSpot = (req, res) => {
 
     let token = res.app.locals.apiKey;
     let id = req.params.id;
@@ -168,14 +168,14 @@ exports.testOneSpot = (req, res) => {
 
         .then(resultat => {
             let info = resultat.data.skiSpot;
-            res.render("update", {info:info});
+            res.render("spot_update", {info:info});
         })    
         .catch(erreur => {
              res.send(erreur);
         });
 };
 
-exports.updateSpot = (req, res) => {
+exports.postUpdateSpot = (req, res) => {
     let id = req.params.id;
     let token = res.app.locals.apiKey;
 
@@ -199,10 +199,10 @@ exports.updateSpot = (req, res) => {
     
     { headers: {"Authorization": token}})
     .then(resultat => {
-          res.redirect("/spot"); })
+          res.redirect("/"); })
     .catch(erreur => {
         req.flash("error", `Une Erreur c'est produite lors de la modification du spot `);
-        res.render("update");
+        res.render("spot_update");
         });
 };
 

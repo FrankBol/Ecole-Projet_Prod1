@@ -4,6 +4,7 @@ body {
   background-image: url(../image/skiRando.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 0;
 }
 
 img {
@@ -667,3 +668,4 @@ align-items: stretch;
 color: white;
 margin-top: 20px;
 }
+

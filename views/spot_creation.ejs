@@ -1,4 +1,6 @@
-
+<%- include('./partials/head'); -%>
+<%- include('./partials/navbar') -%>
+<%- include('./partials/header'); -%>
 
 <div class="addSpot">
     <form action="/createSpot" method="post" class="box">
@@ -9,7 +11,7 @@
         <input type="text" name="coordinates" placeholder="Coordinates">
         <button type="submit" class="btn4">Créer</button>
         <style>
-            .alert {
+           .alert {
                 top:78%;
                 width:336px;
             }
@@ -18,3 +20,4 @@
     </form>
     <form method="get" action="/spot"><button type="submit" class="btn5">Spot</button></form>
 </div>
+<%- include('./partials/footer'); -%>
