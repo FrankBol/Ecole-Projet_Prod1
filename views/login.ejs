@@ -1,7 +1,7 @@
 <script src="/js/login.js" defer></script>
     <div class="container">
       <span class="error animated tada" id="msg"></span>
-      <form action="/postlogin" method="post" name="form1" class="box">
+      <form action="/users/login" method="post" name="form1" class="box">
         <h4>BIEN<span>VENUE</span></h4>
         <h5>Connectez-vous.</h5>
           <input type="text" name="email" id="email" required placeholder="Email" autocomplete="off">
@@ -10,5 +10,5 @@
           <input type="submit" value="Sign in" class="btn1" onclick="login()">
         </form>
         <%- include("partials/messages") -%>
-          <a href="signup" class="dnthave">Créer le compte!</a>
+          <a href="/users/signup" class="dnthave">Créer le compte!</a>
     </div>

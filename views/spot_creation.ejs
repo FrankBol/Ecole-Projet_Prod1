@@ -1,5 +1,5 @@
 <div class="addSpot">
-    <form action="/createSpot" method="post" class="box">
+    <form action="/spots/create" method="post" class="box">
         <input type="text" name="name" placeholder="Nom du Spot">
         <input type="text" name="description" placeholder="Description">
         <input type="text" name="address" placeholder="Adresse">
@@ -14,5 +14,5 @@
         </style>        
         <%- include("partials/messages") -%>
     </form>
-    <form method="get" action="/spot"><button type="submit" class="btn5">Spot</button></form>
+    <form method="get" action="/"><button type="submit" class="btn5">Spots</button></form>
 </div>
