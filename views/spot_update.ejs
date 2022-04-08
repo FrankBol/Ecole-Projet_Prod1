@@ -1,11 +1,20 @@
+<%- include('./partials/head'); -%>
+<%- include('./partials/navbar') -%>
+<%- include('./partials/header'); -%>
+
 <div class="addSpot">
     <!-- <h2>Modification du Spot</h2> -->
     <form action="/spots/update/<%= info._id %>?_method=put" method="post" class="box">
-        <input type="text" name="name" placeholder="Nom du Spot" value="<%= info.name %>">
-        <input type="text" name="description" placeholder="Description" value="<%= info.description %>">
-        <input type="text" name="address" placeholder="Adresse" value="<%= info.address %>">
-        <input type="text" name="difficulty" placeholder="Dificulté" value="<%= info.difficulty %>">
-        <input type="text" name="coordinates" placeholder="Coordinates" value="<%= info.coordinates %>">
+        <label for="name">Name: </label>
+        <input type="text" name="name" placeholder="Nom du Spot" value="<%= info.name %>"><br>
+        <label for="name">Description: </label>
+        <input type="text" name="description" placeholder="Description" value="<%= info.description %>"><br>
+        <label for="name">Adresse: </label>
+        <input type="text" name="address" placeholder="Adresse" value="<%= info.address %>"><br>
+        <label for="name">Dificulté: </label>
+        <input type="text" name="difficulty" placeholder="Dificulté" value="<%= info.difficulty %>"><br>
+        <label for="name">Coordonnées: </label>
+        <input type="text" name="coordinates" placeholder="Coordinates" value="<%= info.coordinates %>"><br>
         <button type="submit" class="btn4">Soumettre</button>
         <style>
             .alert {
@@ -15,6 +24,6 @@
         </style>            
         <%- include("partials/messages") -%>
     </form>
-    <form method="get" action="/"><button type="submit" class="btn5">Spots</button></form>
+    <form method="get" action="/"><button type="submit" class="btn5">Annuler</button></form>
 </div>
-    
+<%- include('./partials/footer'); -%>

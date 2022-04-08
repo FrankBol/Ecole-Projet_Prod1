@@ -87,18 +87,9 @@ exports.getSpots = (req, res) => {
 };
 
 exports.getCreateSpot = (req, res) => {
-    console.log('getCreateSpot');
     let token = res.app.locals.apiKey;
-    console.log(`token = ${token}`);
-    let info = {
-        "description": "",
-        "name": "",
-        "address": "",
-        "difficulty": "",
-        "coordinates": ""
-    };
     if(token){
-        res.render("spot_creation",{info:info});
+        res.render("spot_creation");
     }
     else{res.render("login");}
 };
@@ -126,10 +117,9 @@ exports.postCreateSpot = (req, res) => {
         {headers: {"Authorization": token}})
 
         .then(resultat => {
-            res.redirect('/spots');
+            res.redirect('/');
         })
         .catch(erreur => {
-            console.log(`erreur : ${erreur}`);
             req.flash("error", `Une Erreur c'est produite lors de la création de spot `);
             res.redirect("/spots/create");
         });
@@ -145,7 +135,6 @@ exports.getSpotInformation = (req, res) => {
         })
         .then(resultat => {
             let info = resultat.data.skiSpot;
-            console.log(resultat);
             res.render("spot_information", { info});
         }).catch(erreur => {
             res.render("login");
