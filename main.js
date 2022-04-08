@@ -1,6 +1,5 @@
 const express = require("express");
 const app = new express();
-const expressLayouts = require('express-ejs-layouts');
 const morgan = require('morgan');
 const methodOverride = require("method-override");
 const expressSession = require("express-session");
@@ -26,16 +25,15 @@ app.use((req, res, next) => {
     next();
 });
 
-
-app.use(expressLayouts);
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 app.use(methodOverride("_method"));  
 app.use('/', express.static('public'));
 app.use(morgan('tiny'));
 
-app.set('layout','../views/layouts/applayout');
 app.set("view engine","ejs");
+
+
 
 const userRoutes = require('./routes/users');
 app.use(userRoutes);

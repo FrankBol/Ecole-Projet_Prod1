@@ -1,3 +1,6 @@
+<%- include('./partials/head'); -%>
+<%- include('./partials/header'); -%>
+
 <script  src="js/profil.js" defer></script>
 <div class="container">
     <span class="error animated tada" id="msg"></span>
@@ -12,3 +15,4 @@
       </form>
       <form action="/users/logout" method="get"><button class="btn2" id="deconnexion">Déconnexion</button></form>
   </div> 
+  <%- include('./partials/footer'); -%>
