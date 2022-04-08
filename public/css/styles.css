@@ -133,7 +133,7 @@ h1 {
 /* =========== formulaire login - signup =========== */
 label {
   display: inline-block;
-  padding: 10px
+  padding: 10px;
 }
 
 .formulaire {
@@ -146,7 +146,6 @@ label {
 form {
   display: inline-block;
   margin: 0 auto;
-  width: 400px;
 }
 
 .champ {
@@ -255,7 +254,7 @@ div button {
 
 .container{
   margin: 0;
-  top: 25%;
+  top: 35%;
   left: 50%;
   position: absolute;
   text-align: center;
@@ -263,8 +262,6 @@ div button {
   background-color: hwb(220 48% 50%);
   opacity: 0.9;
   border-radius: 9px;
-  border-top: 10px solid hwb(220 48% 50%);
-  border-bottom: 10px solid hwb(220 48% 50%);
   width: 400px;
   height: 500px;
   box-shadow: 1px 1px 108.8px 19.2px rgb(25,31,53);
@@ -285,15 +282,14 @@ div button {
 .box h5 {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 13px;
-  color: #a1a4ad;
+  color: #505257;
   letter-spacing: 1.5px;
   margin-top: -15px;
-  margin-bottom: 70px;
 }
 
 .box input[type = "text"],.box input[type = "password"] {
-  display: block;
-  margin: 30px auto;
+  display: inline-block;
+  margin: 18px auto;
   background: #262e49;
   border: 0;
   border-radius: 5px;
@@ -352,7 +348,7 @@ label span {
   height: 49px;
   font-size: 16px;
   position: absolute;
-  top: 70%;
+  top: 68%;
   left: 8%;
   transition: 0.3s;
   cursor: pointer;
@@ -390,7 +386,7 @@ label span {
   height: 49px;
   font-size: 16px;
   position: absolute;
-  top: 79%;
+  top: 78%;
   left: 8%;
   transition: 0.3s;
   cursor: pointer;
@@ -432,7 +428,7 @@ label span {
 
 .dnthave{
     position: absolute;
-    top: 92%;
+    top: 89%;
     left: 38%;
     color: black;
 }
@@ -484,7 +480,7 @@ label span {
   padding-bottom: 6%; /* 2%; */
   top: 30%;
   left: 50%;
-  position: absolute;
+  position: relative;
   text-align: center;
   transform: translateX(-50%);
   background-color: hwb(220 48% 50%);
@@ -492,7 +488,7 @@ label span {
   border-radius: 9px;
   border-top: 10px solid hwb(220 48% 50%);
   border-bottom: 10px solid hwb(220 48% 50%);
-  width: 40%;
+  width: 100%;
   height: auto;
   box-shadow: 1px 1px 108.8px 19.2px rgb(84, 84, 87);
 }
