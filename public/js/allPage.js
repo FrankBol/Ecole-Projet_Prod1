@@ -1,1 +1,2 @@
-logo = () => window.location.assign("/profil");
+logo = () => window.location.assign("/users/profil");
+imgProfil = () => window.location.assign("/users/logout");
