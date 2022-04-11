@@ -3,6 +3,20 @@
 <%- include('./partials/header'); -%>
 
 <h1><%= name %></h1>
+<div class="w">
+    <%  for (var i = 1; i <=  NbPages; i++){%>
+    
+        <a href="/<%= i %> "> <%= i %> </a>
+       <% } %>
+</div>
+
+<select name="nimporte" onChange="location.href=''+this.options[this.selectedIndex].value+'';">
+    <option>Nombre de Spots</option>
+    <option value="/NbSpots/100000">Tous les spots</option>
+    <option value="/NbSpots/5">5</option>
+    <option value="/NbSpots/10">10</option>
+    <option value="/NbSpots/15">15</option>
+</select>
 
 <div style="display: flex; justify-content: center;">
     <div class="listeSpots" style="background-color:rgba(255,255,255,0.40);">
@@ -15,7 +29,7 @@
                     <p>Addresse: <%= spot.address %></p>
                     <p>Difficulté: <%= spot.difficulty %></p>
                     <p>Coordonnées: <%= spot.coordinates %></p>
-                    <%= deleteFaile %>
+
                 </div>
                 <br>
                 <div class="img-spotlist" style="padding:10px 5px;">
@@ -39,4 +53,5 @@
         <% }) %>
     </div>
 </div>
+
 <%- include('./partials/footer'); -%>

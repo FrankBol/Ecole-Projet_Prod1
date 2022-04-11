@@ -11,6 +11,8 @@ exports.getLogin = (req, res) => {
 
 exports.getDeconnexion = (req, res) => {
     res.app.locals.apiKey = "";
+    req.app.locals.page = "";
+    req.app.locals.NbSpots = "";
     res.render('login');  
 };
 
@@ -70,20 +72,29 @@ exports.postLogin = (req, res) => {
 
 exports.getSpots = (req, res) => {
     let token = res.app.locals.apiKey;
+    let page = req.params.page;
+    let NbSpots = req.params.NbSpots;
+    
+    if(page){req.app.locals.page = page;}
+    if(NbSpots){req.app.locals.NbSpots = NbSpots;}
 
-    axios.get(SkiApi + "/ski-spot", {headers: {"Authorization": token}})
-        .then(resultat => {
+        axios.get(`${SkiApi}/ski-spot?limit=${req.app.locals.NbSpots || 10000}&page=${req.app.locals.page} `,
+         {headers: {"Authorization": token}})
+         .then(resultat => {
+
             spots = resultat.data.skiSpots;
+            let NbPages = resultat.data.totalPages;
 
             axios.get(SkiApi + "/tokenInfo", {headers: {"Authorization": token}})
                 .then(resultat => {
-                    let name = resultat.data.name;
 
-                    res.render('spots_list', { spots, name, deleteFaile : undefined });
-                })
+                    let name = resultat.data.name;
+                    res.render('spots_list', { spots, name, NbPages});
+                });
         }).catch(erreur => {
-            res.render("login");
-        });
+                res.render("login");
+        
+    });
 };
 
 exports.getCreateSpot = (req, res) => {
