@@ -5,21 +5,21 @@
 <div>
     <div class="oneSpot">
         <label class="oneSpotLabel">
-            <%= info.name %>
-        </label><br>
+            Nom :
+        </label><span><%= info.name %></span><br>
         <label class="oneSpotLabel">
-            <%= info.description %>
-        </label><br>
+            Description :
+        </label><span><%= info.description %></span><br>
         <label class="oneSpotLabel">
-            <%= info.address %>
-        </label><br>
+            Adresse :
+        </label><span><%= info.address %></span><br>
         <label class="oneSpotLabel">
-            <%= info.difficulty %>
-        </label><br>
+            Difficulté :
+        </label><span><%= info.difficulty %></span><br>
         <label style="color: black;">
-            <%= info.coordinates %>
-        </label>
-        <form method="get" action="/"><button type="submit" class="btn6">Spots</button></form>
+            Coordonnées :
+        </label><span><%= info.coordinates %></span>
+        <form method="get" action="/"><input type="submit" class="btnSpots" value="Spots"></form>
     </div>
 </div>
 <%- include('./partials/footer'); -%>

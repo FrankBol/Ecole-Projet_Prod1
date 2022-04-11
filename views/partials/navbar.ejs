@@ -1,24 +1,19 @@
 <!-- Navigation-->
-<script src="../js/allPage.js" defer></script>
+<script src="/js/allPage.js" defer></script>
 <header>
-<nav>
-    <ul>
-        <li>
-            <div class="image">
-                <img src="/image/logo.jpg" alt="logo" onclick="logo()">
-        </li>
-        </div>
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/spots/create">Ajouter Spot</a></li>
-        <li><a href="/spots/update">Modifier Spot</a></li>
-        <li style="float:right">
-            <div class="image">
-               
-                <img id="image" src="../image/profile-pic.png" alt="profil" onclick="imgProfil()">
-        </li>
-        <a class="btn-deconnex" href="/users/logout">Déconnexion</a>
-        </div>
-    </ul>
-</nav>
+    <div class="barreNavigation">
+        <img class="icone" src="/image/logo.jpg" alt="logo" onclick="logo()">
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/spots/create">Ajouter Spot</a></li>
+            </ul>
+            <ul>
+                <li><a href="/users/logout">Déconnexion</a></li>
+            </ul>
+        </nav>
+        <div class="barreNom"><%= name %></div>
+        <img class="icone" src="/image/chris.png" alt="profil" onclick="imgProfil()">
+    </div>
 </header>
 

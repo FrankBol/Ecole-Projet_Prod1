@@ -1,4 +1,5 @@
 <%- include('./partials/head'); -%>
+<%- include('./partials/navbar') -%>
 <%- include('./partials/header'); -%>
 
 <script  src="js/profil.js" defer></script>
@@ -9,10 +10,9 @@
       <h5>Votre Profil.</h5>
       <div class="user one">
         </div>
-        <i class="typcn typcn-eye" id="eye"></i>
+        <!-- <i class="typcn typcn-eye" id="eye"></i> -->
         <div><span class="profilInfo"> Prénom: </span ><span class="profilInfo"><%= name %></span></div>
         <div><span class="profilInfo">Email :</span ><span class="profilInfo"><%= email %></span></div> 
       </form>
-      <form action="/users/logout" method="get"><button class="btn2" id="deconnexion">Déconnexion</button></form>
   </div> 
   <%- include('./partials/footer'); -%>

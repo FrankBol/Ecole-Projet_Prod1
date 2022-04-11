@@ -3,14 +3,13 @@
 
 <script src="../js/allPage.js" defer></script>
     <div class="container">
-      <span class="error animated tada" id="msg"></span>
       <form action="/users/login" method="post" name="form1" class="box">
         <h4>BIEN<span>VENUE</span></h4>
         <h5>Connectez-vous.</h5>
           <input type="text" name="email" id="email" required placeholder="Email" autocomplete="off">
-          <i class="typcn typcn-eye" id="eye"></i>
+          <!-- <i class="typcn typcn-eye" id="eye"></i> -->
           <input type="password" name="password" id="password" required placeholder="Passsword" autocomplete="off">
-          <input type="submit" value="Sign in" class="btn1" onclick="login()">
+          <input type="submit" value="Connexion" class="btnLogin" onclick="login()">
         </form>
         <%- include("partials/messages") -%>
           <a href="/users/signup" class="dnthave">Créer le compte!</a>
