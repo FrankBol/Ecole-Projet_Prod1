@@ -18,6 +18,8 @@ router.put("/spots/update/:id", controllerRoute.postUpdateSpot);
 router.get('/spots/:id', controllerRoute.getSpotInformation);
 
 router.get('/', controllerRoute.getSpots);
+router.get('/:page', controllerRoute.getSpots);
+router.get('/NbSpots/:NbSpots', controllerRoute.getSpots);
 
 router.get("*", controllerRoute.error404);
 
