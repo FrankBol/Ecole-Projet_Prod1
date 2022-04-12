@@ -27,7 +27,7 @@ module.exports = {
         res.render('spot_update');
     },
 
-    getDeconnecxion : (req, res) => {
+    getLogout : (req, res) => {
         res.app.locals.apiKey = "";
         res.redirect("/");
     },

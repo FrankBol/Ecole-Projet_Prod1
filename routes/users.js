@@ -21,7 +21,7 @@ router.get("/spots/update/:id",controllerRoute.getSpotInformation,controllerRout
 router.put("/spots/update/:id", controllerRoute.postUpdateSpot);
 
 router.delete("/spots/delete/:id", controllerRoute.deleteSpot);
-router.get("/users/logout", controllerRoute.getDeconnecxion);
+router.get("/users/logout", controllerRoute.getLogout);
 
 router.get("*", controllerRoute.error404);
 
