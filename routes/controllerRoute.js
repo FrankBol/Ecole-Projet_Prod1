@@ -5,16 +5,12 @@ exports.getSignup = (req, res) => {
     res.render('signup');
 };
 
-exports.getLogin = (req, res) => {
-    res.redirect("/");    
-};
-
-exports.getDeconnexion = (req, res) => {
+exports.getLogout = (req, res) => {
     res.app.locals.apiKey = "";
     res.redirect("/");
 };
 
-exports.getProfil = (req, res) => {
+exports.getProfile = (req, res) => {
     if (res.app.locals.apiKey) {
         let token = res.app.locals.apiKey;
 
@@ -80,7 +76,7 @@ exports.getSpots = (req, res) => {
         .then(resultat => {
             let spots = resultat.data.skiSpots;
             let totalPages = resultat.data.totalPages;
-            // console.log(`resultat ${JSON.stringify(resultat.data)}`);
+            
             axios.get(SkiApi + "/tokenInfo", {headers: {"Authorization": token}})
                 .then(resultat => {
                     let name = resultat.data.name;
@@ -181,7 +177,7 @@ exports.getUpdateSpot = (req, res) => {
            {headers: {"Authorization": token}})
 
         .then(resultat => {
-            console.log(`resultat.data ${JSON.stringify(resultat.data)}`);
+            
             let info = resultat.data.skiSpot;
 
             axios.get(SkiApi + "/tokenInfo", {headers: {"Authorization": token}})
