@@ -76,7 +76,7 @@ exports.getSpots = (req, res) => {
         .then(resultat => {
             let spots = resultat.data.skiSpots;
             let totalPages = resultat.data.totalPages;
-            // console.log(`resultat ${JSON.stringify(resultat.data)}`);
+            
             axios.get(SkiApi + "/tokenInfo", {headers: {"Authorization": token}})
                 .then(resultat => {
                     let name = resultat.data.name;
@@ -177,7 +177,7 @@ exports.getUpdateSpot = (req, res) => {
            {headers: {"Authorization": token}})
 
         .then(resultat => {
-            console.log(`resultat.data ${JSON.stringify(resultat.data)}`);
+            
             let info = resultat.data.skiSpot;
 
             axios.get(SkiApi + "/tokenInfo", {headers: {"Authorization": token}})
