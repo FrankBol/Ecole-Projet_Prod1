@@ -5,16 +5,12 @@ exports.getSignup = (req, res) => {
     res.render('signup');
 };
 
-exports.getLogin = (req, res) => {
-    res.redirect("/");    
-};
-
-exports.getDeconnexion = (req, res) => {
+exports.getLogout = (req, res) => {
     res.app.locals.apiKey = "";
     res.redirect("/");
 };
 
-exports.getProfil = (req, res) => {
+exports.getProfile = (req, res) => {
     if (res.app.locals.apiKey) {
         let token = res.app.locals.apiKey;
 

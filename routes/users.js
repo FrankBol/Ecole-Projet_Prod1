@@ -6,8 +6,8 @@ const controllerRoute = require('./controllerRoute');
 router.get('/users/signup', controllerRoute.getSignup);
 router.post("/users/signup", controllerRoute.postSignup);
 router.post("/users/login", controllerRoute.postLogin);
-router.get('/users/profil', controllerRoute.getProfil);
-router.get("/users/logout", controllerRoute.getDeconnexion);
+router.get('/users/profil', controllerRoute.getProfile);
+router.get("/users/logout", controllerRoute.getLogout);
 
 
 router.get("/spots/create", controllerRoute.getCreateSpot);
