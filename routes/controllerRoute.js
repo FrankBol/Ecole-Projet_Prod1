@@ -129,7 +129,7 @@ module.exports = {
             ...infoUpdate,
             "coordinates": numberTabCoordinates
         };
-        axios.put(SkiApi + "/ski-spot/" + id, info, { headers: {"Authorization": token}})
+        axios.put(SkiApi + "/ski-spot/" + id, info, { headers: {"Authorization": token} })
         .then(() => {res.redirect("/"); })
         .catch(() => {
             req.flash("error", `Une Erreur c'est produite lors de la modification du spot `);
@@ -140,7 +140,7 @@ module.exports = {
         let token = res.app.locals.apiKey;
         let id = req.params.id;
     
-        axios.delete(SkiApi + "/ski-spot/" + id, {headers: {"Authorization": token}})
+        axios.delete(SkiApi + "/ski-spot/" + id, {headers: {"Authorization": token} })
             .then(() => res.redirect("/"))
             
             .catch(() => {
