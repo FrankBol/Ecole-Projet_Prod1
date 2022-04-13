@@ -120,7 +120,7 @@ module.exports = {
         let token = res.app.locals.apiKey;
         let id = req.params.id;
     
-        let infoUpdate = req.body
+        let infoUpdate = req.body;
         let coordinates = req.body.coordinates;
         let tabCoordinates = coordinates.split(",");
         let numberTabCoordinates = tabCoordinates.map( i => Number(i));
