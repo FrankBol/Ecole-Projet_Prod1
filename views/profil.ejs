@@ -1,17 +1,18 @@
 <%- include('./partials/head'); -%>
-<%- include('./partials/navbar') -%>
 <%- include('./partials/header'); -%>
 
 <script  src="js/profil.js" defer></script>
 <div class="container">
+    <span class="error animated tada" id="msg"></span>
     <form action="/users/login" method="post" name="form1" class="box">
       <h4>BIEN<span>VENUE</span></h4>
       <h5>Votre Profil.</h5>
       <div class="user one">
         </div>
-        <!-- <i class="typcn typcn-eye" id="eye"></i> -->
-        <div><span class="profilInfo"> Prénom: </span ><span class="profilInfo"><%= infoProfil.name %></span></div>
-        <div><span class="profilInfo">Email :</span ><span class="profilInfo"><%= infoProfil.email %></span></div> 
+        <i class="typcn typcn-eye" id="eye"></i>
+        <div><span class="profilInfo"> Prénom: </span ><span class="profilInfo"><%= name %></span></div>
+        <div><span class="profilInfo">Email :</span ><span class="profilInfo"><%= email %></span></div> 
       </form>
+      <form action="/users/logout" method="get"><button class="btn2" id="deconnexion">Déconnexion</button></form>
   </div> 
   <%- include('./partials/footer'); -%>

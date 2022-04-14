@@ -2,73 +2,42 @@
 <%- include('./partials/navbar') -%>
 <%- include('./partials/header'); -%>
 
-<% page = Number(page); %>
+<h1><%= name %></h1>
 
-<div class="center">
-    Page <%= page %>
-</div>
-<div class="center">
-    <% if(page>1) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page-1 %>">
-        <input type="submit" class="btn btnLarge" value="Revernir à la page <%= page-1 %>">
-    </form>
-    <% } %>
-    <% if(page<totalPages) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page+1 %>">
-        <input type="submit" class="btn btnLarge" value="Aller à la page <%= page+1 %>">
-    </form>
-    <% } %>
-</div>
-
-<div class="center">
-    <div class="spots">
+<div style="display: flex; justify-content: center;">
+    <div class="listeSpots" style="background-color:rgba(255,255,255,0.40);">
         <% spots.forEach(spot => { %>
-        <div class="spots-item">
-            <div>
-                <div class="spots-information">
-                    <h2><%= spot.name %></h2>
-                    <p>Description: <%= spot.description %></p>
+        <div class="spots-list" style="padding:20px;">
+            <div style="display:flex; flex-direction:row-reverse; flex-wrap: wrap; justify-content: flex-end;">
+                <div class="spots-information" style="padding:9px 30px 0px 30px;">
+                    <h2 style="margin-top:0px;"><%= spot.name %></h2>
+                    <p style="min-width:300px; max-width:600px;">Description: <%= spot.description %></p>
                     <p>Addresse: <%= spot.address %></p>
                     <p>Difficulté: <%= spot.difficulty %></p>
                     <p>Coordonnées: <%= spot.coordinates %></p>
+                    <%= deleteFaile %>
                 </div>
-                <div class="spots-image">
+                <br>
+                <div class="img-spotlist" style="padding:10px 5px;">
                     <a href="https://cypress-acidic-chard.glitch.me/?pic=<%= spot._id %>">
-                        <img src="https://cypress-acidic-chard.glitch.me/?thumbnail=<%= spot._id %>">
+                    <img src="https://cypress-acidic-chard.glitch.me/?thumbnail=<%= spot._id %>" alt="thumbnail"
+                        style="width:320px;height:200px;">
                     </a>
                 </div>
             </div>
-            <div class="spots-buttons">
-                <form action="/spots/delete/<%= spot._id %>?_method=delete" method="post" style="width:auto;">
-                    <button class="btn btnSmall">Supprimer</button></form>
-                <form action="/spots/update/<%= spot._id %>?" method="get" style="width:auto;"><button
-                        class="btn btnSmall">Modifier</button></form>
-                <form action="/spots/<%= spot._id %>" method="get" style="width:auto;"><button
-                        class="btn btnSmall">Information</button></form>
+            <div>
+                <div style="display:flex; flex-wrap:wrap; justify-content: space-between;">
+                <div class="btn-spotlist" style="display:flex; flex-wrap:wrap; justify-content: space-between;">
+                    <form action="/spots/delete/<%= spot._id %>?_method=delete" method="post" style="width:auto;"><button
+                            class="btn-default">Supprimé</button></form>
+                    <form action="/spots/update/<%= spot._id %>?" method="get" style="width:auto;"><button
+                            class="btn-default">Modifié</button></form>
+                    <form action="/spots/<%= spot._id %>" method="get" style="width:auto;"><button
+                            class="btn-default">Information</button></form>
+                </div>
             </div>
         </div>
         <% }) %>
     </div>
 </div>
-
-<div class="center">
-    <% if(page>1) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page-1 %>">
-        <input type="submit" class="btn btnLarge" value="Revernir à la page <%= page-1 %>">
-    </form>
-    <% } %>
-    <% if(page<totalPages) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page+1 %>">
-        <input type="submit" class="btn btnLarge" value="Aller à la page <%= page+1 %>">
-    </form>
-    <% } %>
-</div>
-<div class="center">
-    Page <%= page %>
-</div>
-
 <%- include('./partials/footer'); -%>
