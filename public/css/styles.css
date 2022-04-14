@@ -327,11 +327,10 @@ nav li a:hover:not(.active) {
   text-decoration:none; 
   margin-right: 7px;
   color: black;
+}
+.paginationActive{
+  text-decoration:none; 
+  margin-right: 7px;
+  color: black;
   font-size: 1.7rem
-}
-.bigPagination{
-  color: white;
-}
-.marginPagination{
-  margin: 0 40px;
 }
