@@ -103,7 +103,7 @@ label {
 }
 
 .box input[type = "text"],.box input[type = "password"] {
-    display: block;
+    display: inline-block;
     margin: 0.5em auto;
     background: navy;
     border: 1px solid rgba(0,0,0,0);
@@ -146,7 +146,7 @@ label {
 
 .btnLarge {
   font-size: 0.9em;
-  width: 340px;
+  width: 200px;
   height: 49px;
 }
 
@@ -219,6 +219,8 @@ nav li a:hover:not(.active) {
 .center {
   display:flex;
   justify-content:center;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
 .spots {
@@ -320,4 +322,16 @@ nav li a:hover:not(.active) {
   display:flex;
   flex-wrap:wrap;
   justify-content: space-around;
+}
+.pagination{
+  text-decoration:none; 
+  margin-right: 7px;
+  color: black;
+  font-size: 1.7rem
+}
+.bigPagination{
+  color: white;
+}
+.marginPagination{
+  margin: 0 40px;
 }

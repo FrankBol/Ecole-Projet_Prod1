@@ -3,25 +3,21 @@
 <%- include('./partials/header'); -%>
 
 <% page = Number(page); %>
+<%if (page >= totalPages) page = 0;%>
 
-<div class="center">
-    Page <%= page %>
-</div>
-<div class="center">
-    <% if(page>1) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page-1 %>">
-        <input type="submit" class="btn btnLarge" value="Revernir à la page <%= page-1 %>">
+<div class="center"> 
+    <form action="/<%= page-1 %>" method="get">   
+        <input type="submit" class="btn btnLarge" value="Précédant">
     </form>
-    <% } %>
-    <% if(page<totalPages) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page+1 %>">
-        <input type="submit" class="btn btnLarge" value="Aller à la page <%= page+1 %>">
+    <div class="marginPagination">   
+        <%  for (var i = 1; i <=  totalPages  ; i++){%>
+            <a class="pagination" href="/<%= i %>" id="pagination"> <%= i %> </a>  
+        <% } %>
+    </div>
+    <form action="/<%= page+1 %>" method="get">  
+        <input type="submit" class="btn btnLarge" value="Suivant">
     </form>
-    <% } %>
 </div>
-
 <div class="center">
     <div class="spots">
         <% spots.forEach(spot => { %>

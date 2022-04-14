@@ -71,8 +71,9 @@ module.exports = {
 
     getSpots : (req, res, next) => {
         let token = res.app.locals.apiKey;  
-        let page = req.query.page;
-        if (page==undefined) page=1;
+        let page = req.params.page
+        console.log(page);
+        if (page == undefined || page == 0) page=1;
     
         axios.get(SkiApi + `/ski-spot?limit=6&page=${page}`, {headers: {"Authorization": token}})
             .then(resultat => {
