@@ -2,26 +2,32 @@
 <%- include('./partials/navbar') -%>
 <%- include('./partials/header'); -%>
 
-<% page = Number(page); %>
+<% page = Number(page);
+    let pageNombre = 5;
+    let pageNombreChaqueCote = Math.floor(pageNombre / 2);
+    let pageMinimum = page-pageNombreChaqueCote;
+    let pageMaximum = page+pageNombreChaqueCote;
+    if (pageMinimum<1){pageMaximum = pageNombre; pageMinimum = 1; }
+    if (pageMaximum>totalPages){pageMinimum = totalPages + 1 - pageNombre; pageMaximum = totalPages; }
+    if (pageMinimum<1){pageMinimum = 1; }
+    if (pageMaximum>totalPages){pageMaximum = totalPages; }
+%>
 
-<div class="center">
-    Page <%= page %>
-</div>
-<div class="center">
-    <% if(page>1) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page-1 %>">
-        <input type="submit" class="btn btnLarge" value="Revernir à la page <%= page-1 %>">
-    </form>
-    <% } %>
-    <% if(page<totalPages) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page+1 %>">
-        <input type="submit" class="btn btnLarge" value="Aller à la page <%= page+1 %>">
-    </form>
-    <% } %>
-</div>
+<div class="center"> 
 
+    <form action="/<%= (page==1)?totalPages:page-1 %>" method="get">  
+        <input type="submit" class="btn btnLarge" value="Précédent">
+    </form>
+
+    <div class="marginPagination">   
+        <%  for (var i = pageMinimum; i <= pageMaximum ; i++){%>
+            <a class="<%= (page == i)?'paginationActive':'pagination' %>" href="/<%= i %>" id="pagination"> <%= i %> </a>  
+        <% } %>
+    </div>
+    <form action="/<%= (page==totalPages)?1:page+1 %>" method="get">  
+        <input type="submit" class="btn btnLarge" value="Suivant">
+    </form>
+</div>
 <div class="center">
     <div class="spots">
         <% spots.forEach(spot => { %>
@@ -53,22 +59,20 @@
     </div>
 </div>
 
-<div class="center">
-    <% if(page>1) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page-1 %>">
-        <input type="submit" class="btn btnLarge" value="Revernir à la page <%= page-1 %>">
+<div class="center"> 
+
+    <form action="/<%= (page==1)?totalPages:page-1 %>" method="get">  
+        <input type="submit" class="btn btnLarge" value="Précédent">
     </form>
-    <% } %>
-    <% if(page<totalPages) { %>
-    <form action="/" method="get">
-        <input type="hidden" name="page" value="<%= page+1 %>">
-        <input type="submit" class="btn btnLarge" value="Aller à la page <%= page+1 %>">
+
+    <div class="marginPagination">   
+        <%  for (var i = pageMinimum; i <= pageMaximum ; i++){%>
+            <a class="<%= (page == i)?'paginationActive':'pagination' %>" href="/<%= i %>" id="pagination"> <%= i %> </a>  
+        <% } %>
+    </div>
+    <form action="/<%= (page==totalPages)?1:page+1 %>" method="get">  
+        <input type="submit" class="btn btnLarge" value="Suivant">
     </form>
-    <% } %>
-</div>
-<div class="center">
-    Page <%= page %>
 </div>
 
 <%- include('./partials/footer'); -%>
