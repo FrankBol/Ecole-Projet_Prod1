@@ -321,3 +321,23 @@ nav li a:hover:not(.active) {
   flex-wrap:wrap;
   justify-content: space-around;
 }
+
+.alert{
+    display: block;
+    background-color: red;
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: white;
+}
+
+.error{
+  display: block;
+  position: relative;
+  background-color: red;
+  width: 300px;
+  border-radius: 10px;
+  margin-top: 15px;
+  color: white;
+  left: 7%;
+}
