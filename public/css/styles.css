@@ -334,3 +334,23 @@ nav li a:hover:not(.active) {
   color: black;
   font-size: 1.7rem
 }
+
+.alert{
+    display: block;
+    background-color: red;
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: white;
+}
+
+.error{
+  display: block;
+  position: relative;
+  background-color: red;
+  width: 300px;
+  border-radius: 10px;
+  margin-top: 15px;
+  color: white;
+  left: 7%;
+}
