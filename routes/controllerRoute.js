@@ -85,6 +85,28 @@ module.exports = {
                 res.render("login");
             });
     },
+
+      getUsers : (req, res ) =>{
+        let token = res.app.locals.apiKey;
+       let urlParams = req.query.url;
+        if ( typeof urlParams === "undefined" ) 
+        
+       axios.get(SkiApi + `/ski-spot/user/${urlParams}`, {headers: {"Authorization": token}}) 
+         Promise.resolve('user')
+        .then(res => {
+        return new Promise(res.locals.urlParams);
+        .then(res =>{
+            console.log(res.url);
+        });
+        
+        }
+        .catch((error) => {
+        console.error ( error );
+        })
+        
+ 
+
+
     postCreateSpot : (req, res) => {
         let token = res.app.locals.apiKey;
         let infoCreate = req.body;
