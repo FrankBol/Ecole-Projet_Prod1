@@ -4,7 +4,7 @@ const router = express.Router();
 const controllerRoute = require('./controllerRoute');
 
 router.get("/", controllerRoute.getSpots,controllerRoute.getProfil, controllerRoute.pageSpotsList);
-router.get("/:page", controllerRoute.getSpots,controllerRoute.getProfil, controllerRoute.pageSpotsList , controllerRoute.getUsers);
+router.get("/:page", controllerRoute.getSpots,controllerRoute.getProfil, controllerRoute.pageSpotsList);
 
 router.get('/users/signup', controllerRoute.pageSignup);
 router.post("/users/signup", controllerRoute.postSignup);
@@ -23,6 +23,13 @@ router.put("/spots/update/:id", controllerRoute.postUpdateSpot);
 
 router.delete("/spots/delete/:id", controllerRoute.deleteSpot);
 router.get("/users/logout", controllerRoute.getLogout);
+
+router.get("/users/search",controllerRoute.getProfil);
+router.post("/users/search", controllerRoute.postFriend);
+router.delete("/users/delete",controllerRoute.deleteFriend);
+
+
+
 
 
 

@@ -85,29 +85,8 @@ module.exports = {
                 res.render("login");
             });
     },
-
-      getUsers : (req, res ) =>{
-        let token = res.app.locals.apiKey;
-       let urlParams = req.query.url;
-        if ( typeof urlParams === "undefined" ) 
         
-       axios.get(SkiApi + `/ski-spot/user/${urlParams}`, {headers: {"Authorization": token}}) 
-         Promise.resolve('user')
-        .then(res => {
-        return new Promise(res.locals.urlParams);
-        .then(res =>{
-            console.log(res.url);
-        });
-        
-        }
-        .catch((error) => {
-        console.error ( error );
-        })
-        
- 
-
-
-    postCreateSpot : (req, res) => {
+     postCreateSpot : (req, res) => {
         let token = res.app.locals.apiKey;
         let infoCreate = req.body;
     
@@ -169,6 +148,89 @@ module.exports = {
             req.flash("error", `Le Spot n'a pu être supprimé `);
             res.redirect("/");
             });
+    },
+/***********************************3eme livraison**************************************/
+    getUser : (req, res, next) => {
+             let token = res.app.locals.apiKey;  
+
+            axios.get(SkiApi + "/user", {headers: {"Authorization": token}})
+
+            .then(resultat => {
+             res.app.locals.infoUser = resultat.data;
+             next();
+         })
+            .catch(() => {res.redirect("/users/profil");});
+
+    },
+    deleteFriend : (req, res) => {
+         let token = res.app.locals.apiKey;
+         let id = req.params.id;
+
+         axios.delete(SkiApi + "/friend/" + id, {headers: {"Authorization": token} })
+
+        .then(() => res.redirect("/users/profil"))
+        .catch(() => {
+
+            req.flash("error", `L'ami n'a pu être supprimé `);
+            res.redirect("/users/profil");
+         });
+
+    },
+    postFriend : (req, res) => {
+         let token = res.app.locals.apiKey;
+         let id = req.params.id;
+
+        axios.get(SkiApi + "/friend/"+ id, {headers: {"Authorization": token}})
+
+        .then(resultat => {  // TODO : à continuer//
+             res.app.locals.infoUser = resultat.data.friend;
+            })
+        .catch(() => {res.redirect("/users/profil");});
+
+    },
+    getSearch : (req, res) => {
+        let token = res.app.locals.apiKey;
+        let words = req.params.words;
+
+        axios.get(SkiApi + "/users/search/"+words, {headers: {"Authorization": token}})
+
+        .then(resultat => {  // TODO : à compléter
+             // -- EXEMPLES : LA LISTE EST VIDE --
+
+            // { "message": "SEARCH_COMPLETED_SUCCESSFULLY",
+
+            //     "users": []// }
+
+            // -- LA LISTE NON VIDE --
+
+            // {
+
+            //     "message": "SEARCH_COMPLETED_SUCCESSFULLY",
+
+            //     "users": [
+
+            //         {
+
+            //             "id": "621a65359afc3b0004aaf044",
+
+            //             "name": "william garneau"
+
+            //         },
+
+            //         {
+
+            //             "id": "621a659a9afc3b0004aaf049",
+
+            //             "name": "Will"
+
+            //         }, ...
+
+
+
+        })
+
+        .catch();
+
     },
     error404 : (req, res) => {
         res.render("error404");
