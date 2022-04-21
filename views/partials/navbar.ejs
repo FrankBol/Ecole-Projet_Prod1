@@ -1,16 +1,16 @@
 <!-- Navigation-->
 <header class="nav-sticky">
-<nav class="navbar">
-    <div>
+<nav class="navbar flex">
+    <div class="flex">
         <img class="icon" src="/image/logo.jpg" alt="logo" onclick="logo()">
-        <ul>
+        <ul class="flex">
             <li><a href="/">Accueil</a></li>
             <li><a href="/spots/create">Ajouter Spot</a></li>
         </ul>
     </div>
-    <div>
+    <div class="flex">
         <span><%= infoProfil.name %></span>
-        <div>
+        <div class="flex">
             <img class="icon" src="/image/chris.png" alt="profil" onclick="imgProfil()">
             <a href="/users/logout">Déconnexion</a>
         </div>

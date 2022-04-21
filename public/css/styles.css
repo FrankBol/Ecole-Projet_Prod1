@@ -6,6 +6,9 @@ body {
     margin: 0;
     font-size: 1.2rem;
 }
+.flex{
+  display: flex;
+}
 
 h1 {
     animation: fadein 2s;
@@ -170,7 +173,6 @@ label {
 }
 .navbar {
   background-color: mediumslateblue;
-  display: flex;
   justify-content: space-between;
   padding: 5px;
 }
@@ -186,22 +188,13 @@ label {
 .navbar ul{
   list-style-type: none;  
 }
-.navbar div:first-child{
-  display: flex;
-  align-items: center;
-}
-.navbar div:first-child ul{
-  display: flex;
-}
 .navbar div:first-child li{
   margin-right: 2em;
 }
-.navbar div:last-child{
-  display: flex;
+.navbar div:last-child, .navbar div:first-child{
   align-items: center;
 }
 .navbar div:last-child div{
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
