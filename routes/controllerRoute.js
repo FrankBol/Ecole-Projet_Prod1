@@ -194,42 +194,29 @@ module.exports = {
 
         axios.get(SkiApi + "/users/search/"+words, {headers: {"Authorization": token}})
 
-        .then(resultat => {  // TODO : à compléter
+        .then(resultat => { 
+            res.locals.users = resultat.data.users; // TODO : à compléter
              // -- EXEMPLES : LA LISTE EST VIDE --
 
             // { "message": "SEARCH_COMPLETED_SUCCESSFULLY",
-
             //     "users": []// }
-
             // -- LA LISTE NON VIDE --
-
             // {
-
             //     "message": "SEARCH_COMPLETED_SUCCESSFULLY",
-
             //     "users": [
-
             //         {
-
             //             "id": "621a65359afc3b0004aaf044",
-
             //             "name": "william garneau"
-
             //         },
-
             //         {
-
             //             "id": "621a659a9afc3b0004aaf049",
+           //             "name": "Will"  //         }, ...
+ })
+        .catch(() => {
 
-            //             "name": "Will"
-
-            //         }, ...
-
-
-
-        })
-
-        .catch();
+            req.flash("error", `L'ami n'a pas été trouvé `);
+            res.redirect("/users/search/");
+         });
 
     },
     error404 : (req, res) => {
