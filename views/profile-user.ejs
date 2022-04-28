@@ -1,0 +1,53 @@
+<%- include('./partials/head'); -%>
+<%- include('./partials/navbar') -%>
+<%- include('./partials/titrePrincipal'); -%>
+
+<div class="container">
+  <div class="box">
+    <h4>BIEN<span>VENUE</span></h4>
+    <h5>Profil de <%= infoUser.name %>.</h5>
+    <div class="user one">
+    </div>
+    <!-- <i class="typcn typcn-eye" id="eye"></i> -->
+    <div><span class="profilInfo">Nom: </span><span class="profilInfo"><%= infoUser.name %></span></div>
+    <div><span class="profilInfo">Email: </span><span class="profilInfo"><%= infoUser.email %></span></div>
+    <div><span class="profilInfo">Téléphone: </span><span class="profilInfo"><%= infoUser.phone %></span></div>
+    <div><span class="profilInfo">Adresse: </span><span class="profilInfo"><%= infoUser.address %></span></div>
+    <%- include('./partials/messages'); -%>
+    <form action="/users/add" method="post" style="width:auto;">
+      <input type="hidden" name="friendId" id="friendId" value="<%= infoUser._id %>">
+      <input type="hidden" name="name" id="name" value="<%= infoUser.name %>">
+      <button class="btn btnSmall">Ajouter</button>
+    </form>
+    <form action="/users/delete/<%= infoUser._id %>?_method=delete" method="post" style="width:auto;">
+      <button class="btn btnSmall">Supprimer</button>
+    </form>
+    
+    <div><span class="defaultSize">
+        <% infoUser.friends.forEach(friend => {
+              if (friend!=null) { 
+              %>
+        <!-- <style>
+          div {
+            border: 1px dotted red;
+          }
+        </style> -->
+        <div style="display:flex;justify-content:space-between;">
+          <div style="display:flex; flex-direction:column;justify-content:center; text-align:left; width:50%;">
+            <a style="text-decoration:none; font-weight:bold; font-family:Arial, Helvetica, sans-serif;"
+              href="/users/<%= friend.id %>"><%= friend.name %></a>
+          </div>
+          <% if(!(infoProfil._id==friend.id || infoProfil.friends.find(e =>{return e.id===friend.id;}))) { %> 
+            <form action="/users/add" method="post" style="width:auto;">
+              <input type="hidden" id="friendId" value="<%= friend.id %>">
+              <input type="hidden" id="name" value="<%= friend.name %>">
+              <button class="btn btnSmall">Ajouter</button>
+            </form>
+          <% } %>
+        </div>
+        <% }}) %>
+      </span></div>
+
+  </div>
+</div>
+<%- include('./partials/footer'); -%>

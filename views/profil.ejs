@@ -2,16 +2,36 @@
 <%- include('./partials/navbar') -%>
 <%- include('./partials/titrePrincipal'); -%>
 
-<script  src="js/profil.js" defer></script>
 <div class="container">
-    <form action="/users/login" method="post" name="form1" class="box">
-      <h4>BIEN<span>VENUE</span></h4>
-      <h5>Votre Profil.</h5>
-      <div class="user one">
+  <div class="box">
+    <h4>BIEN<span>VENUE</span></h4>
+    <h5>Votre Profil</h5>
+    <div><span class="profilInfo">Nom: </span><span class="profilInfo"><%= infoProfil.name %></span></div>
+    <div><span class="profilInfo">Email: </span><span class="profilInfo"><%= infoProfil.email %></span></div>
+    <div><span class="profilInfo">Téléphone: </span><span class="profilInfo"><%= infoProfil.phone %></span></div>
+    <div><span class="profilInfo">Adresse: </span><span class="profilInfo"><%= infoProfil.address %></span></div>
+    <%- include('./partials/messages'); -%>
+    <form style="display:flex;" action="/users/search" method="get" name="rechercher" class="box">
+      <input type="text" name="words" id="words" placeholder="Nom à rechercher">
+      <button class="btn btnSmall">Rechercher</button>
+    </form>
+    <hr width="50%">
+    <div><span class="defaultSize">
+        Vous avez <%= infoProfil.friends.length %> ami<% if(infoProfil.friends.length>1) { %>s<% } %>
+        <% infoProfil.friends.forEach(friend => {
+          if (friend!=null) { 
+          %>
+        <div style="display:flex;justify-content:space-between;">
+          <div style="display:flex; flex-direction:column;justify-content:center; text-align:left; width:50%;">
+            <a style="text-decoration:none; font-weight:bold; font-family:Arial, Helvetica, sans-serif;"
+              href="/users/<%= friend.id %>"><%= friend.name %></a>
+          </div>
+          <form action="/users/delete/<%= friend.id %>?_method=delete" method="post" style="width:auto;">
+            <button class="btn btnSmall">Supprimer</button>
+          </form>
         </div>
-        <!-- <i class="typcn typcn-eye" id="eye"></i> -->
-        <div><span class="profilInfo"> Prénom: </span ><span class="profilInfo"><%= infoProfil.name %></span></div>
-        <div><span class="profilInfo">Email :</span ><span class="profilInfo"><%= infoProfil.email %></span></div> 
-      </form>
-  </div> 
-  <%- include('./partials/footer'); -%>
+        <% }}) %>
+      </span></div>
+  </div>
+</div>
+<%- include('./partials/footer'); -%>
