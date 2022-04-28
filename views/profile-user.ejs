@@ -14,14 +14,17 @@
     <div><span class="profilInfo">Téléphone: </span><span class="profilInfo"><%= infoUser.phone %></span></div>
     <div><span class="profilInfo">Adresse: </span><span class="profilInfo"><%= infoUser.address %></span></div>
     <%- include('./partials/messages'); -%>
+    <% if(infoProfil.friends.find(e =>{return e.id===infoUser._id;})) { %> 
     <form action="/users/add" method="post" style="width:auto;">
       <input type="hidden" name="friendId" id="friendId" value="<%= infoUser._id %>">
       <input type="hidden" name="name" id="name" value="<%= infoUser.name %>">
       <button class="btn btnSmall">Ajouter</button>
     </form>
+    <% } else { %> 
     <form action="/users/delete/<%= infoUser._id %>?_method=delete" method="post" style="width:auto;">
       <button class="btn btnSmall">Supprimer</button>
     </form>
+    <% } %>
     
     <div><span class="defaultSize">
         <% infoUser.friends.forEach(friend => {
