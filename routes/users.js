@@ -22,6 +22,9 @@ router.post("/users/add", controllerRoute.postFriend);
 router.delete("/users/delete/:id",controllerRoute.deleteFriend);
 router.get('/users/:id', controllerRoute.getUser,controllerRoute.pageProfilUsager);
 
+router.get("/users/update",controllerRoute.getProfil, controllerRoute.pageProfilUpdate);
+router.put("/users/update", controllerRoute.postUpdateProfil);
+
 router.get("*", controllerRoute.error404);
 
 module.exports = router;

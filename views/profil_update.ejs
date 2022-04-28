@@ -1,0 +1,26 @@
+<%- include('./partials/head'); -%>
+<%- include('./partials/navbar') -%>
+<%- include('./partials/titrePrincipal'); -%>
+
+<div class="container">
+  <div class="box">
+    <h4>BIEN<span>VENUE</span></h4>
+    <h5>Profil de <%= infoUser.name %>.</h5>
+    <div class="user one">
+    </div>
+    <!-- <i class="typcn typcn-eye" id="eye"></i> -->
+    <div><span class="profilInfo">Nom: </span><span class="profilInfo"><%= infoUser.name %></span></div>
+    <div><span class="profilInfo">Email: </span><span class="profilInfo"><%= infoUser.email %></span></div>
+    <div><span class="profilInfo">Téléphone: </span><span class="profilInfo"><%= infoUser.phone %></span></div>
+    <div><span class="profilInfo">Adresse: </span><span class="profilInfo"><%= infoUser.address %></span></div>
+    <%- include('./partials/messages'); -%>
+    <% if(infoProfil.friends.find(e =>{return e.id===infoUser._id;})) { %> 
+    <form action="/users/add" method="post" style="width:auto;">
+      <input type="hidden" name="friendId" id="friendId" value="<%= infoUser._id %>">
+      <input type="hidden" name="name" id="name" value="<%= infoUser.name %>">
+      <button class="btn btnSmall">Modifier</button>
+      <input type="text" name="name" id="name" value="<%= infoUser.name %>">
+      <input type="text" name="email" id="email" value="<%= infoUser.email %>">
+      <input type="text" name="phone" id="phone" value="<%= infoUser.phone %>">
+      <input type="text" name="address" id="address" value="<%= infoUser.address %>">
+    </form>

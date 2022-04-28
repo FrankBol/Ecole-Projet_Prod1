@@ -318,6 +318,29 @@ module.exports = {
             .catch(()=> {res.redirect("/");});
         }
     },
+
+    postUpdateProfil : (req, res) =>{
+        let token = res.app.locals.apiKey;
+        let infoUpdate = req.body;
+
+        axios.put(SkiApi + "/user", infoUpdate, { headers: {"Authorization": token} })
+        .then(() => {res.redirect("/users/profil"); })
+        .catch(() => {
+            req.flash("error", `Une Erreur c'est produite lors de la modification du profil`);
+            res.redirect("users/update/");
+            });
+
+    
+    },
+    pageProfilUpdate : (req, res) => {
+        res.render('profil_update');
+    },
+
+
+
+
+
+
     error404 : (req, res) => {
         res.render("error404");
     },
