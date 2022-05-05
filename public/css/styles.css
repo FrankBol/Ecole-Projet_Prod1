@@ -390,3 +390,15 @@ label {
   top: 50%;
   right: 38%;
 }
+
+.friend__wrap{
+  display:flex;
+  justify-content:space-between;
+  height: 75px;
+  text-align: center;
+}
+
+.friend__wrap form{
+  text-align: center;
+  justify-content: center;
+}
