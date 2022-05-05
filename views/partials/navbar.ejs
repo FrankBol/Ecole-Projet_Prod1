@@ -6,6 +6,11 @@
         <ul class="flex">
             <li><a href="/">Accueil</a></li>
             <li><a href="/spots/create">Ajouter Spot</a></li>
+            <li>
+                <form style="display:flex;" action="/users/search" method="get" name="rechercher">
+                    <input type="text" class="searchbox" name="words" id="words" placeholder="Nom à rechercher" formaction="/users/search">
+                </form>
+            </li>
         </ul>
     </div>
     <div class="flex">
