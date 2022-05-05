@@ -125,6 +125,20 @@ label {
     border: 1px solid mediumslateblue;
 }
 
+.searchbox{
+  display: block;
+  width: 260px;
+  background-color: navy;
+  font-size: 0.9em;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid #092f80;
+}
+.searchbox:focus{
+  background-color: mediumslateblue;
+  outline-style: none;
+  font-size: 0.9em;
+}
 .btn {
   border:0;
   background: mediumslateblue;
