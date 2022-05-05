@@ -16,7 +16,7 @@ router.get("/users/logout", controllerRoute.getLogout);
 router.get('/users/signup', controllerRoute.pageSignup);
 router.post("/users/signup", controllerRoute.postSignup);
 router.post("/users/login", controllerRoute.postLogin);
-router.get('/users/profil', controllerRoute.getProfil, controllerRoute.pageProfil);
+router.get('/users/profil', controllerRoute.getProfil, controllerRoute.getMyFriends, controllerRoute.pageProfil);
 router.get("/users/search",controllerRoute.getSearch);
 router.post("/users/add", controllerRoute.postFriend);
 router.delete("/users/delete/:id",controllerRoute.deleteFriend);

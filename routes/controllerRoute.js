@@ -318,6 +318,15 @@ module.exports = {
             .catch(()=> {res.redirect("/");});
         }
     },
+    getMyFriends : (req, res, next) => {
+        let token = res.app.locals.apiKey;  
+        axios.get(SkiApi + "/friend", {headers: {"Authorization": token}})
+        .then(resultat => {
+            res.app.locals.infoProfil.friends = resultat.data.friends;
+            next();
+        })
+        .catch(() => {res.redirect("/");});
+    },    
     error404 : (req, res) => {
         res.render("error404");
     },
