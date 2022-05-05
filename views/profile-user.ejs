@@ -25,13 +25,9 @@
         <input type="hidden" name="name" id="name" value="<%= infoUser.name %>">
         <button class="btn btnSmall">Ajouter</button>
       </form>
-      <% } else { %> 
-      <form action="/users/delete/<%= infoUser._id %>?_method=delete" method="post" style="width:auto;">
-        <button class="btn btnSmall btnFriend">Supprimer</button>
-      </form>
+       
       <% } %>
     </div>
-    <!-- <i class="typcn typcn-eye" id="eye"></i> -->
 
     <hr width="100%">
     <div><span class="defaultSize">
@@ -39,12 +35,8 @@
         <% infoUser.friends.forEach(friend => {
               if (friend!=null) { 
               %>
-        <!-- <style>
-          div {
-            border: 1px dotted red;
-          }
-        </style> -->
-        
+   
+       
         <div style="display:flex;justify-content:space-between;">
           <div style="display:flex; flex-direction:column;justify-content:center; text-align:left; width:50%;">
             <a style="text-decoration:none; font-weight:bold; font-family:Arial, Helvetica, sans-serif;"
