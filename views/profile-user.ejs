@@ -3,30 +3,39 @@
 <%- include('./partials/titrePrincipal'); -%>
 
 <div class="container">
-  <div class="box">
+  <div class="header__class">
     <h4>BIEN<span>VENUE</span></h4>
     <h5>Profil de <%= infoUser.name %>.</h5>
+  </div>
+
     <div class="user one">
     </div>
+    <div class="profil__main">
+      <div class="info__profil">
+        <p><span>Nom: </span><%= infoUser.name %></p>
+        <p><span>Email: </span><%= infoUser.email %></p>
+      </div>
+      <div class="image__profil">
+        <img src="/image/chris.png">
+      </div>
+      <%- include('./partials/messages'); -%>
+      <% if(infoProfil.friends.find(e =>{return e.id===infoUser._id;})) { %> 
+      <form action="/users/add" method="post" style="width:auto;">
+        <input type="hidden" name="friendId" id="friendId" value="<%= infoUser._id %>">
+        <input type="hidden" name="name" id="name" value="<%= infoUser.name %>">
+        <button class="btn btnSmall">Ajouter</button>
+      </form>
+      <% } else { %> 
+      <form action="/users/delete/<%= infoUser._id %>?_method=delete" method="post" style="width:auto;">
+        <button class="btn btnSmall btnFriend">Supprimer</button>
+      </form>
+      <% } %>
+    </div>
     <!-- <i class="typcn typcn-eye" id="eye"></i> -->
-    <div><span class="profilInfo">Nom: </span><span class="profilInfo"><%= infoUser.name %></span></div>
-    <div><span class="profilInfo">Email: </span><span class="profilInfo"><%= infoUser.email %></span></div>
-    <div><span class="profilInfo">Téléphone: </span><span class="profilInfo"><%= infoUser.phone %></span></div>
-    <div><span class="profilInfo">Adresse: </span><span class="profilInfo"><%= infoUser.address %></span></div>
-    <%- include('./partials/messages'); -%>
-    <% if(infoProfil.friends.find(e =>{return e.id===infoUser._id;})) { %> 
-    <form action="/users/add" method="post" style="width:auto;">
-      <input type="hidden" name="friendId" id="friendId" value="<%= infoUser._id %>">
-      <input type="hidden" name="name" id="name" value="<%= infoUser.name %>">
-      <button class="btn btnSmall">Ajouter</button>
-    </form>
-    <% } else { %> 
-    <form action="/users/delete/<%= infoUser._id %>?_method=delete" method="post" style="width:auto;">
-      <button class="btn btnSmall">Supprimer</button>
-    </form>
-    <% } %>
-    
+
+    <hr width="100%">
     <div><span class="defaultSize">
+      
         <% infoUser.friends.forEach(friend => {
               if (friend!=null) { 
               %>
@@ -35,6 +44,7 @@
             border: 1px dotted red;
           }
         </style> -->
+        
         <div style="display:flex;justify-content:space-between;">
           <div style="display:flex; flex-direction:column;justify-content:center; text-align:left; width:50%;">
             <a style="text-decoration:none; font-weight:bold; font-family:Arial, Helvetica, sans-serif;"

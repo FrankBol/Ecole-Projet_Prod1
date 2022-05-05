@@ -3,19 +3,29 @@
 <%- include('./partials/titrePrincipal'); -%>
 
 <div class="container">
-  <div class="box">
-    <h4>BIEN<span>VENUE</span></h4>
-    <h5>Votre Profil</h5>
-    <div><span class="profilInfo">Nom: </span><span class="profilInfo"><%= infoProfil.name %></span></div>
-    <div><span class="profilInfo">Email: </span><span class="profilInfo"><%= infoProfil.email %></span></div>
-    <div><span class="profilInfo">Téléphone: </span><span class="profilInfo"><%= infoProfil.phone %></span></div>
-    <div><span class="profilInfo">Adresse: </span><span class="profilInfo"><%= infoProfil.address %></span></div>
-    <%- include('./partials/messages'); -%>
-    <form style="display:flex;" action="/users/search" method="get" name="rechercher" class="box">
-      <input type="text" name="words" id="words" placeholder="Nom à rechercher">
-      <button class="btn btnSmall">Rechercher</button>
-    </form>
-    <hr width="50%">
+    <div class="header__class">
+      <h4>BIEN<span>VENUE</span></h4>
+      <h5>Votre Profil</h5>
+    </div>
+    <div class="profil__main">
+      <div class="info__profil">
+        <p><span>Nom: </span><%= infoProfil.name %></p>
+        <p><span>Email: </span><%= infoProfil.email %></p>
+      </div>
+      <div class="image__profil">
+        <img src="/image/chris.png">
+      </div>
+    </div>
+
+    <div class="search__friends">
+      <%- include('./partials/messages'); -%>
+      <form style="display:flex;" action="/users/search" method="get" name="rechercher" class="box">
+        <input type="text" name="words" id="words" placeholder="Nom à rechercher">
+        <button class="btn btnSmall">Rechercher</button>
+      </form>
+    </div>
+    <div class="friends__list">
+    <hr width="100%">
     <div><span class="defaultSize">
         Vous avez <%= infoProfil.friends.length %> ami<% if(infoProfil.friends.length>1) { %>s<% } %>
         <% infoProfil.friends.forEach(friend => {
@@ -32,6 +42,8 @@
         </div>
         <% }}) %>
       </span></div>
-  </div>
+    </div>
+    
+
 </div>
 <%- include('./partials/footer'); -%>

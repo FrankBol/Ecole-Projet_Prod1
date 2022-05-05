@@ -107,7 +107,7 @@ label {
     margin: 0.5em auto;
     background: navy;
     border: 1px solid rgba(0,0,0,0);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 15px 10px;
     width: 320px;
     outline: none;
@@ -140,10 +140,10 @@ label {
   font-size: 0.9em;
 }
 .btn {
-  border:0;
+  border: 25px;
   background: mediumslateblue;
   color: white;
-  border-radius: 100px;
+  border-radius: 10px;
   cursor: pointer;
   margin: 0.5em;
 }
@@ -155,13 +155,13 @@ label {
 .btnSmall {
   font-size: 0.8em;
   width: 100px;
-  height: 49px;
+  height: 53px;
 }
 
 .btnLarge {
   font-size: 0.9em;
   width: 200px;
-  height: 49px;
+  height: 53px;
 }
 
 .link {
@@ -346,4 +346,47 @@ label {
   margin-top: 15px;
   color: white;
   left: 7%;
+}
+
+
+.profil__main{
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+  padding: 10px;
+  height: 170px;
+}
+
+.info__profil{
+  display: block;
+  position: relative;
+  text-align: left;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.info__profil span{
+  font-size: larger;
+  font-weight: bold;
+}
+
+.image__profil{
+  padding: 5px;
+  height: 130px;
+}
+
+.image__profil img{
+  border-radius: 10px;
+  box-shadow:  1px 1px 1px 1px mediumslateblue;
+}
+
+.header__class{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2em; 
+}
+
+.btnFriend{
+  position: absolute;
+  top: 50%;
+  right: 38%;
 }
