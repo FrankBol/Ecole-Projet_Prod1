@@ -44,7 +44,7 @@
           </div>
           <% if(!(infoProfil._id==friend.id || infoProfil.friends.find(e =>{return e.id===friend.id;}))) { %> 
             <form action="/users/add" method="post" style="width:auto;">
-              <input type="hidden" id="friendId" value="<%= friend.id %>">
+              <input type="hidden" name="friendId" id="friendId" value="<%= friend.id %>">
               <input type="hidden" id="name" value="<%= friend.name %>">
               <button class="btn btnSmall">Ajouter</button>
             </form>
