@@ -261,8 +261,8 @@ module.exports = {
         let token = res.app.locals.apiKey;
         let id = req.params.id;
 
-        console.log(`deleteFriend id : ${id}`);
-        console.log(`deleteFriend res.app.locals.infoProfil : ${JSON.stringify(res.app.locals.infoProfil)}`);
+        // console.log(`deleteFriend id : ${id}`);
+        // console.log(`deleteFriend res.app.locals.infoProfil : ${JSON.stringify(res.app.locals.infoProfil)}`);
 
         // PATCH pour avoir des amis à tester
         if (PATCH) {
@@ -282,6 +282,7 @@ module.exports = {
     postFriend : (req, res) => {
         let token = res.app.locals.apiKey;
         let id = req.body.friendId;
+        let name = req.body.name
         let info = {"friendId":id};
 
         // PATCH pour avoir des amis à tester
