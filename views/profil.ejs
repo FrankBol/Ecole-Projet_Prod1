@@ -18,7 +18,7 @@
     </div>
 
     <div class="search__friends">
-      <%- include('./partials/messages'); -%>
+      <div class="flex" style ="justify-content: center;"><%- include('./partials/messages'); -%></div>
       <form style="display:flex;" action="/users/search" method="get" name="rechercher" class="box">
         <input type="text" name="words" id="words" placeholder="Nom à rechercher">
         <button class="btn btnSmall">Rechercher</button>
@@ -33,7 +33,7 @@
           %>
         <div style="display:flex;justify-content:space-between;">
           <div style="display:flex; flex-direction:column;justify-content:center; text-align:left; width:50%;">
-            <a style="text-decoration:none; font-weight:bold; font-family:Arial, Helvetica, sans-serif;"
+            <a style="color:mediumslateblue; text-decoration:none; font-weight:bold; font-family:Arial, Helvetica, sans-serif;"
               href="/users/<%= friend.id %>"><%= friend.name %></a>
           </div>
           <form action="/users/delete/<%= friend.id %>?_method=delete" method="post" style="width:auto;">

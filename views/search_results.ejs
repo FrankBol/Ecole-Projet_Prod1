@@ -17,7 +17,7 @@
    
         <div style="display:flex;justify-content:space-between;">
           <div style="display:flex; flex-direction:column;justify-content:center; text-align:left; width:50%;">
-            <a style="text-decoration:none; font-weight:bold; font-family:Arial, Helvetica, sans-serif;"
+            <a style="color:mediumslateblue; text-decoration:none; font-weight:bold; font-family:Arial, Helvetica, sans-serif;"
               href="/users/<%= user.id %>"><%= user.name %></a>
           </div>
           <% if(!(infoProfil._id==user.id || infoProfil.friends.find(e =>{return e.id===user.id;}))) { %> 
@@ -26,7 +26,7 @@
               <input type="hidden" name="name" id="name" value="<%= user.name %>">
               <button class="btn btnSmall">Ajouter</button>
             </form>
-          <% } %>
+          <% }else{%><button class="btn btnSmall" style="background:rgb(109, 109, 109)!important">Déjà Ami</button><%} %>
         </div>
         <% }}) %>
       </span></div>
