@@ -3,7 +3,7 @@ const router = express.Router();
 const controllerRoute = require('./controllerRoute');
 
 router.get("/:page", controllerRoute.getSpots,controllerRoute.getProfil,controllerRoute.pageSpotsList);
-router.get("/", controllerRoute.getSpots,controllerRoute.getProfil,controllerRoute.pageSpotsList);
+router.get("/", controllerRoute.getSpots,controllerRoute.getProfil,controllerRoute.getMyFriends,controllerRoute.pageSpotsList);
 
 router.get("/spots/create", controllerRoute.pageCreateSpot);
 router.post("/spots/create", controllerRoute.postCreateSpot);
