@@ -261,9 +261,6 @@ module.exports = {
         let token = res.app.locals.apiKey;
         let id = req.params.id;
 
-        // console.log(`deleteFriend id : ${id}`);
-        // console.log(`deleteFriend res.app.locals.infoProfil : ${JSON.stringify(res.app.locals.infoProfil)}`);
-
         // PATCH pour avoir des amis à tester
         if (PATCH) {
             friends_remove(res.app.locals.infoProfil._id, id);
