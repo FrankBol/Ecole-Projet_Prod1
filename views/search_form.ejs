@@ -4,10 +4,11 @@
 
     <div class="container">
       <h2>Rechercher</h2>
-      <form style="display:flex;" action="/users/search" method="get" name="rechercher" >
-        <input type="text" class="searchbox" name="words" id="words" placeholder="Nom à rechercher">
-        <button class="btn btnSmall">Rechercher</button>
-      </form>      
-    </div>
+        <%- include('./partials/messages'); -%>
+          <form style="display:flex;" action="/users/search" method="get" name="rechercher" class="box">
+            <input type="text" name="words" id="words" placeholder="Nom à rechercher">
+            <button class="btn btnSmall">Rechercher</button>
+          </form>          
+        <div><span class="defaultSize">
 
 <%- include('./partials/footer'); -%>

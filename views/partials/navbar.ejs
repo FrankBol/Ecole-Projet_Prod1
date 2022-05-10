@@ -2,7 +2,7 @@
 <header class="nav-sticky">
 <nav class="navbar flex">
     <div class="flex">
-        <img class="icon" src="/image/logo.jpg" alt="logo" onclick="logo()">
+        <a class="flex" href="/"><img class="icon" src="/image/logo.jpg" alt="logo"></a>
         <ul class="flex">
             <li><a href="/">Accueil</a></li>
             <li><a href="/spots/create">Ajouter Spot</a></li>
@@ -10,9 +10,9 @@
         </ul>
     </div>
     <div class="flex">
-        <span><%= infoProfil.name %></span>
-        <div class="flex">
-            <img class="icon" src="/image/chris.png" alt="profil" onclick="imgProfil()">
+        <div class="nom-profil"><%= infoProfil.name %></div>
+        <div class="flex">   
+            <a href="/users/<%= infoProfil._id %>"><img class="icon" src="/image/chris.png" alt="profil"></a>
             <a href="/users/logout">Déconnexion</a>
         </div>
     </div>
