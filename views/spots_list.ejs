@@ -21,7 +21,7 @@
 
     <div class="marginPagination">   
         <%  for (var i = pageMinimum; i <= pageMaximum ; i++){%>
-            <a class="<%= (page == i)?'paginationActive':'pagination' %>" href="/<%= i %>" id="pagination"> <%= i %> </a>  
+            <a class="<%= (page == i)?'paginationActive':'pagination' %>" href="/<%= i %>"> <%= i %> </a>  
         <% } %>
     </div>
     <form action="/<%= (page==totalPages)?1:page+1 %>" method="get">  
@@ -67,7 +67,7 @@
 
     <div class="marginPagination">   
         <%  for (var i = pageMinimum; i <= pageMaximum ; i++){%>
-            <a class="<%= (page == i)?'paginationActive':'pagination' %>" href="/<%= i %>" id="pagination"> <%= i %> </a>  
+            <a class="<%= (page == i)?'paginationActive':'pagination' %>" href="/<%= i %>"> <%= i %> </a>  
         <% } %>
     </div>
     <form action="/<%= (page==totalPages)?1:page+1 %>" method="get">  
